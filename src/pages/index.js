@@ -54,8 +54,16 @@ class Home extends Component {
             margin-top: 0;
           }
 
+          p.level {
+            background-color: rgba(255,255,255,0.1);
+            display: inline-block;
+            margin: 0;
+            padding: 15px 0;
+          }
           p.level-1 {
+            margin-top: -4px;
             margin-left: 50px;
+            transform: rotate(-1deg);
           }
           p:last-of-type {
             margin-bottom: 0;

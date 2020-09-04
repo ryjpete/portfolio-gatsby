@@ -32,17 +32,5 @@ module.exports = {
         },
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-sharp`,
-    //   options: {
-    //     // Available options and their defaults:
-    //     icon: `src/images/favicon-32x32.png`,
-    //     base64Width: 20,
-    //     forceBase64Format: `png`, // valid formats: png,jpg,webp
-    //     useMozJpeg: process.env.GATSBY_JPEG_ENCODER === `MOZJPEG`,
-    //     stripMetadata: true,
-    //     defaultQuality: 50,
-    //   },
-    // },
   ]
 }
