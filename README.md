@@ -5,7 +5,11 @@
   RJP Portfolio Project
 </h1>
 
-## Utilizing Gatsby's hello-world starter
+This project utilizes Gatsby and it's _hello-world_ starter. It will be an ongoing project, first to develop, and then to populate as portfolio items are completed.
+
+-----
+
+_BELOW IS ORIGINAL README, KEPT FOR REFERENCE FOR THE TIME BEING_
 
 -----
 
