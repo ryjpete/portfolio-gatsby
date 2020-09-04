@@ -22,6 +22,21 @@ module.exports = {
         icon: `src/images/favicon-16x16.png`,
       },
     },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Inconsolata`,
+            variants: [
+              `200`,
+              `400`,
+              `900`,
+            ],
+          },
+        ],
+      },
+    },
     // {
     //   resolve: `gatsby-plugin-sharp`,
     //   options: {

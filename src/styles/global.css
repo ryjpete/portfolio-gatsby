@@ -2,7 +2,7 @@ html,
 body {
   background-color: #202020;
   color: #fff;
-  font-family: monospace;
+  font-family: 'Inconsolata', monospace;
   margin: 0;
   padding: 0;
 }
