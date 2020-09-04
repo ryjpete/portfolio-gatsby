@@ -1,9 +1,11 @@
 <p align="center">
-  <img className="logo" src="http://ryanjenningspeterson.com/wp-content/uploads/2014/10/logo.png" alt="rjp logo" />
+  <img className="logo" src="http://ryanjenningspeterson.com/wp-content/uploads/2014/10/logo.png" alt="rjp logo" width="125px" />
 </p>
 <h1 align="center">
-  Portfolio Project utilizing Gatsby's hello-world starter
+  RJP Portfolio Project
 </h1>
+
+## Utilizing Gatsby's hello-world starter
 
 -----
 
