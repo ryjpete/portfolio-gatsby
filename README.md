@@ -1,3 +1,12 @@
+<p align="center">
+  <img className="logo" src="http://ryanjenningspeterson.com/wp-content/uploads/2014/10/logo.png" alt="rjp logo" />
+</p>
+<h1 align="center">
+  Portfolio Project utilizing Gatsby's hello-world starter
+</h1>
+
+-----
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">
