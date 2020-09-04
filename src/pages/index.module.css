@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+}
+
+.homeContent {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  padding-left: 180px;
+}
+.content {
+  padding: 0 10%;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 200;
+  margin-top: 0;
+}
+
+.level {
+  background-color: rgba(255,255,255,0.1);
+  display: inline-block;
+  margin: 0;
+  padding: 15px 0;
+}
+.level1 {
+  margin-top: -4px;
+  margin-left: 50px;
+  transform: rotate(-1deg);
+}
+.level2 {
+  margin-top: 7px;
+  margin-left: 25px;
+  transform: rotate(1deg);
+}
+p:last-of-type {
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .main {
+    display: block;
+  }
+
+  .homeContent {
+    padding-top: 200px;
+    padding-left: 0;
+  }
+}
