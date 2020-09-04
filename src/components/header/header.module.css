@@ -18,6 +18,30 @@
   width: 100%;
 }
 
+.navigation {
+  border-bottom: 1px dashed rgba(255,255,255,0.075);
+  display: flex;
+  justify-content: flex-end;
+  letter-spacing: .1rem;
+  padding: 3rem 2rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 151px;
+}
+.navigation ul {
+  list-style: none;
+  display: flex;
+}
+.navigation ul li {
+  margin-left: 12px;
+}
+.navigation a {
+  background-color: rgba(255,255,255,0.1);
+  color: #fff;
+  padding: 15px 0;
+}
+
 @media (max-width: 767px) {
   .header {
     border-right: 0;
