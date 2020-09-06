@@ -1,6 +1,11 @@
 .level {
-  background-color: rgba(255,255,255,0.1);
   display: inline-block;
   margin: 0;
-  padding: 15px 10px;
+  max-width: 50%;
+}
+
+@media (max-width: 767px) {
+  .level {
+    max-width: 75%;
+  }
 }
