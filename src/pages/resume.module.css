@@ -54,3 +54,9 @@ section h2 {
   margin-bottom: 2rem;
   transform: rotate(-1.5deg);
 }
+
+@media (max-width: 767px) {
+  .aboutSection {
+    max-width: 75%;
+  }
+}
