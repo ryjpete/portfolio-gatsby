@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import aboutStyles from './about.module.css'
 // import Header from '../components/header/header'
 import Layout from '../components/layout/layout'
+import SEO from '../components/seo/seo'
 
 class About extends Component {
   render() {
@@ -21,6 +22,9 @@ class About extends Component {
 
       //     <section className='primary'>
       <Layout>
+        <SEO
+          title="About RJP" />
+          
         <div className='content'>
           <h1>About RJP</h1>
           <div className={aboutStyles.level}>

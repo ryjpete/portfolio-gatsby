@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import resumeStyles from './resume.module.css'
 // import Header from '../components/header/header'
 import Layout from '../components/layout/layout'
+import SEO from '../components/seo/seo'
 
 class Resume extends Component {
   render() {
@@ -21,6 +22,9 @@ class Resume extends Component {
 
       //     <article className='primary'>
       <Layout>
+        <SEO
+          title="Online Resume of RJP" />
+
         <div className='content'>
           <h1>Ryan Peterson</h1>
           <h3>Full Stack Developer</h3>

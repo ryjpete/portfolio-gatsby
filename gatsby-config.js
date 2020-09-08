@@ -6,6 +6,13 @@
 
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: process.env.TITLE || "Portfolio of RJP",
+    description: "The ongoing portfolio of Ryan Peterson, Full Stack Developer and WordPress Engineer.",
+    siteUrl: "http://dev.ryanjenningspeterson.com",
+    image: "/images/logo.png",
+    author: 'RJP',
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {

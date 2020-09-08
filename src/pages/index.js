@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import homeStyles from './index.module.css'
 // import Header from '../components/header/header'
 import Layout from '../components/layout/layout'
+import SEO from '../components/seo/seo'
 
 class Home extends Component {
   render() {
@@ -21,6 +22,9 @@ class Home extends Component {
 
       //     <section className='primary'>
         <Layout>
+          <SEO
+            title="Home" />
+            
           <div className='content'>
             <h1>Portfolio of RJP</h1>
             <p className={homeStyles.level}>this site is never finished. it progresses. constantly. yet it will never be complete.</p>
