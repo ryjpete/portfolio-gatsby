@@ -1,29 +1,15 @@
 import React, { Component } from 'react'
-// import { Helmet } from 'react-helmet'
 import resumeStyles from './resume.module.css'
-// import Header from '../components/header/header'
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo/seo'
 
 class Resume extends Component {
   render() {
     return (
-      // <div className='container'>
-      //   <Helmet>
-      //     <meta charSet='utf-8' />
-      //     <meta
-      //       name='description'
-      //       content='Resume for RJP.' />
-      //     <title>Resume for RJP</title>
-      //   </Helmet>
-
-      //   <main>
-      //     <Header />
-
-      //     <article className='primary'>
       <Layout>
         <SEO
-          title="Online Resume of RJP" />
+          title="Online Resume of RJP"
+          description="Online resume of full-stack developer Ryan Peterson." />
 
         <div className='content'>
           <h1>Ryan Peterson</h1>
@@ -206,9 +192,6 @@ class Resume extends Component {
           </section>
         </div>
       </Layout>
-      //     </article>
-      //   </main>
-      // </div>
     )
   }
 }

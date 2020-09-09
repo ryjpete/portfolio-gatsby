@@ -1,29 +1,15 @@
 import React, { Component } from 'react'
-// import { Helmet } from 'react-helmet'
 import aboutStyles from './about.module.css'
-// import Header from '../components/header/header'
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo/seo'
 
 class About extends Component {
   render() {
     return (
-      // <div className='container'>
-      //   <Helmet>
-      //     <meta charSet='utf-8' />
-      //     <meta
-      //       name='description'
-      //       content='All about developer RJP.' />
-      //     <title>About RJP</title>
-      //   </Helmet>
-        
-      //   <main>
-      //     <Header />
-
-      //     <section className='primary'>
       <Layout>
         <SEO
-          title="About RJP" />
+          title="About RJP"
+          description="Ryan Peterson is a full-stack web developer based in the Chicagoland area." />
           
         <div className='content'>
           <h1>About RJP</h1>
@@ -34,9 +20,6 @@ class About extends Component {
           </div>
         </div>
       </Layout>
-      //     </section>
-      //   </main>
-      // </div>
     )
   }
 }
