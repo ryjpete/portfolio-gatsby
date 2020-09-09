@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+
+  main {
+    display: flex;
+    flex: 1;
+
+    @media (max-width: 767px) {
+      display: block;
+    }
+
+    .primary {
+      align-items: flex-start;
+      display: flex;
+      flex: 1;
+      margin-bottom: 0;
+      padding-top: 10rem;
+      padding-left: 100px;
+
+      @media (max-width: 767px) {
+        padding-top: 175px;
+        padding-left: 0;
+      }
+
+      .content {
+        padding: 10%;
+        width: 100%;
+
+        @media (max-width: 767px) {
+          padding: 5% 10%;
+        }
+      }
+    }
+  }
+}

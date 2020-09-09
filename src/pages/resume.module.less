@@ -1,0 +1,61 @@
+h1 {
+  margin-bottom: 0;
+}
+
+h3 {
+  background-color: rgba(255,255,255,0.1);
+  display: inline-block;
+  margin: 0 0 0 3rem;
+  padding: 1.5rem 1rem;
+  transform: rotate(-1deg);
+}
+h3.company {
+  margin-bottom: 1rem;
+  margin-left: 0;
+  transform: rotate(0deg);
+}
+
+h6 {
+  background-color: rgba(255,255,255,0.1);
+  margin-bottom: 5rem;
+  margin-left: 2rem;
+}
+
+ul {
+  margin-left: 3rem;
+}
+
+section {
+  margin-bottom: 9rem;
+
+  &.aboutSection {
+    max-width: 50%;
+
+    @media (max-width: 767px) {
+      max-width: 75%;
+    }
+  }
+
+  h2 {
+    background-color: rgba(255,255,255,0.8);
+    color: #202020;
+    transform: rotate(-1deg);
+  }
+
+  .sub {
+    margin-top: 1rem;
+    margin-bottom: 7rem;
+    margin-left: 2rem;
+
+    .position {
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+
+    .empDates,
+    .keySpecs h6 {
+      margin-bottom: 2rem;
+      transform: rotate(-1.5deg);
+    }
+  }
+}

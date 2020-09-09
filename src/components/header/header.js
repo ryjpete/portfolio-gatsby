@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import headerStyles from './header.module.css'
+import headerStyles from './header.module.less'
 
 export default function Header() {
   return (
