@@ -1,8 +1,10 @@
+@import '../../styles/imports.less';
+
 .header,
 .navigation {
-  background-color: #202020;
-  border-color: rgba(255,255,255,0.075);
-  border-style: dashed;
+  .bgc(@bg_dark);
+  .bdc(rgba(255,255,255,0.075));
+  .bds(dsh);
   display: flex;
   position: fixed;
   top: 0;
@@ -11,14 +13,13 @@
 
 .header {
   align-items: center;
-  border-width: 0 1px 0 0;
+  .bdw(0 5px 0 0);
   bottom: 0;
   left: 0;
   width: 100px;
 
   @media (max-width: 767px) {
-    border-right: 0;
-    border-bottom: 1px dashed rgba(255,255,255,0.075);
+    .bdw(0 0 1px 0);
     justify-content: center;
     right: 0;
     bottom: auto;
@@ -29,7 +30,7 @@
   .logo {
     display: flex;
     height: auto;
-    margin: auto;
+    .marAuto();
     max-width: 200px;
     width: 85%;
 
@@ -39,16 +40,16 @@
   }
 
   .navigation {
-    border-width: 0 0 1px 0;
+    .bdw(0 0 5px 0);
     justify-content: flex-end;
-    letter-spacing: .1rem;
-    padding: 3rem 1rem;
+    .ls(.1rem);
+    .pad(3rem,1rem,3rem,1rem);
     right: 0;
     left: 101px;
 
     @media (max-width: 767px) {
       justify-content: center;
-      padding: 1rem 0;
+      .pad(1rem,0,1rem,0);
       top: 85px;
       left: 0;
     }
@@ -56,18 +57,18 @@
     ul {
       display: flex;
       list-style: none;
-      margin: 0;
-      padding: 0;
+      .mar();
+      .pad();
 
       li {
-        margin-left: 1.5rem;
+        .m(l,1.5rem);
 
         a {
-          background-color: rgba(255,255,255,0.1);
+          .bgc(rgba(255,255,255,0.1));
           color: #fff;
           display: block;
-          font-size: 1.2rem;
-          padding: 1rem .5rem;
+          .fs(1.2rem);
+          .pad(1rem,.5rem,1rem,.5rem);
         }
       }
     }

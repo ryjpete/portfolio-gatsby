@@ -1,27 +1,29 @@
+@import '../styles/imports.less';
+
 p {
   &.level {
-    background-color: rgba(255,255,255,0.1);
+    .bgc(rgba(255,255,255,0.1));
     display: table;
-    margin: 0;
-    padding: 15px 10px;
+    .mar();
+    .pad(15px,10px,15px,10px);
 
     &.level {
       
       &_1 {
-        margin-top: -4px;
-        margin-left: 50px;
+        .m(t,-4px);
+        .m(l,50px);
         transform: rotate(-1deg);
       }
 
       &_2 {
-        margin-top: 7px;
-        margin-left: 25px;
+        .m(t,7px);
+        .m(l,25px);
         transform: rotate(1deg);
       }
     }
   }
 
   &:last-of-type {
-    margin-bottom: 0;
+    .m(b,0);
   }
 }

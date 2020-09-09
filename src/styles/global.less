@@ -1,11 +1,13 @@
+@import './imports.less';
+
 html,
 body {
-  background-color: #202020;
-  color: #fff;
-  font-family: 'Inconsolata', monospace;
-  font-size: 62.5%;
-  margin: 0;
-  padding: 0;
+  .bgc(@bg_dark);
+  color: @white;
+  .ff('Inconsolata', monospace);
+  .fs(62.5%);
+  .mar();
+  .pad();
 }
 
 * {
@@ -13,78 +15,78 @@ body {
 }
 
 h1 {
-  font-size: 7rem;
-  font-weight: 200;
-  margin-top: 0;
+  .fs(7rem);
+  .fw(200);
+  .m(t,0);
 
   @media (max-width: 1200px) {
-    font-size: 6rem;
+    .fs(6rem);
   }
   @media (max-width: 991px) {
-    font-size: 5rem;
+    .fs(5rem);
   }
   @media (max-width: 767px) {
-    font-size: 4rem;
+    .fs(4rem);
   }
   @media (max-width: 500px) {
-    font-size: 3.4rem;
+    .fs(3.4rem);
   }
 }
 h2 {
-  font-size: 3.6rem;
-  font-weight: 200;
-  margin-top: 0;
+  .fs(3.6rem);
+  .fw(200);
+  .m(t,0);
 
   @media (max-width: 767px) {
-    font-size: 3rem;
+    .fs(3rem);
   }
 }
 h3 {
-  font-size: 3rem;
-  font-weight: 200;
-  margin-top: 0;
+  .fs(3rem);
+  .fw(200);
+  .m(t,0);
 
   @media (max-width: 767px) {
-    font-size: 2.4rem;
+    .fs(2.4rem);
   }
 }
 h4 {
-  font-size: 2.4rem;
-  font-weight: 400;
-  margin-top: 0;
+  .fs(2.4rem);
+  .fw(400);
+  .m(t,0);
 
   @media (max-width: 767px) {
-    font-size: 2.2rem;
+    .fs(2.2rem);
   }
 }
 h5 {
-  font-size: 2rem;
-  font-weight: 400;
-  margin-top: 0;
+  .fs(2rem);
+  .fw(400);
+  .m(t,0);
 
   @media (max-width: 767px) {
-    font-size: 1.8rem;
+    .fs(1.8rem);
   }
 }
 h6 {
-  font-size: 1.8rem;
-  font-weight: 200;
-  margin-top: 0;
-  text-transform: uppercase;
+  .fs(1.8rem);
+  .fw(200);
+  .m(t,0);
+  .tt(u);
 
   @media (max-width: 767px) {
-    font-size: 1.4rem;
+    .fs(1.4rem);
   }
 }
 
 p,
 ul,
 ol {
-  font-size: 1.2rem;
-  letter-spacing: .1rem;
-  line-height: 2rem;
-  margin-top: 0;
+  .fs(1.2rem);
+  .lh(2rem);
+  .ls(.1rem);
+  .m(t,0);
 }
 a {
-  text-decoration: none;
+  .td(none,initial,solid);
 }

@@ -1,0 +1,82 @@
+//  border
+    /*
+    Shorthand for...
+    - border-width
+    - border-style
+    - border-color
+    https://www.w3schools.com/cssref/pr_border.asp
+    */
+    .border(@bw, @bs, @bc) {
+      border: @bw @bs @bc;
+    }
+
+// ------------------------------------------------------------------------------------------
+
+//  border
+    /*
+    Used for setting a single border
+    */    
+    .bd(@b, @num, @style, @color) when (@b = t) { border-top:    ~'@{num}' ~'@{style}' ~'@{color}'; };
+    .bd(@b, @num, @style, @color) when (@b = r) { border-right:  ~'@{num}' ~'@{style}' ~'@{color}'; };
+    .bd(@b, @num, @style, @color) when (@b = b) { border-bottom: ~'@{num}' ~'@{style}' ~'@{color}'; };
+    .bd(@b, @num, @style, @color) when (@b = l) { border-left:   ~'@{num}' ~'@{style}' ~'@{color}'; };
+
+// ------------------------------------------------------------------------------------------
+
+//  border-color
+    /*
+    Sets the color of an element's four borders.
+    https://www.w3schools.com/cssref/pr_border-color.asp
+    */    
+    .bdc(@bdc) {
+      border-color: @bdc;
+    }
+
+// ------------------------------------------------------------------------------------------
+
+//  border-radius
+    /*
+    Defines the radius of the element's corners.
+    https://www.w3schools.com/cssref/css3_pr_border-radius.asp
+    */
+    .bdr(@radius) {
+      -webkit-border-radius: @radius;
+       -khtml-border-radius: @radius;
+         -moz-border-radius: @radius;
+          -ie-border-radius: @radius;
+           -o-border-radius: @radius;
+              border-radius: @radius;
+    }
+
+// ------------------------------------------------------------------------------------------
+
+//  border-style
+    /*
+    Sets the style of an element's four borders.
+    https://www.w3schools.com/cssref/pr_border-style.asp
+    */
+    .bds(@bds) when (@bds = n)    { border-style: none; }
+    .bds(@bds) when (@bds = h)    { border-style: hidden; }
+    .bds(@bds) when (@bds = dot)  { border-style: dotted; }
+    .bds(@bds) when (@bds = dsh)  { border-style: dashed; }
+    .bds(@bds) when (@bds = s)    { border-style: solid; }
+    .bds(@bds) when (@bds = dub)  { border-style: double; }
+    .bds(@bds) when (@bds = g)    { border-style: groove; }
+    .bds(@bds) when (@bds = r)    { border-style: ridge; }
+    .bds(@bds) when (@bds = ins)  { border-style: inset; }
+    .bds(@bds) when (@bds = out)  { border-style: outset; }
+    .bds(@bds) when (@bds = ini)  { border-style: initial; }
+    .bds(@bds) when (@bds = inh)  { border-style: inherit; }
+
+// ------------------------------------------------------------------------------------------
+
+//  border-width
+    /*
+    Sets the width of an element's four borders.
+    https://www.w3schools.com/cssref/pr_border-width.asp
+    */
+    .bdw(@bdw) {
+      border-width: @bdw;
+    }
+
+// ------------------------------------------------------------------------------------------

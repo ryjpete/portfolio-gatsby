@@ -1,0 +1,114 @@
+//  background-attachment
+    /*
+    Sets whether a background image scrolls with the rest of the page or is fixed.
+    https://www.w3schools.com/cssref/pr_background-attachment.asp
+    */
+    .bga(@bga) when (@bga = s)    { background-attachment: scroll; }
+    .bga(@bga) when (@bga = f)    { background-attachment: fixed; }
+    .bga(@bga) when (@bga = l)    { background-attachment: local; }
+    .bga(@bga) when (@bga = ini)  { background-attachment: initial; }
+    .bga(@bga) when (@bga = inh)  { background-attachment: inherit; }
+
+// ------------------------------------------------------------------------------------------
+
+//  background-blend-mode
+    /*
+    Defines the blending mode of each background layer (color and/or image).
+    https://www.w3schools.com/cssref/pr_background-blend-mode.asp
+    */
+    .bgbm(@bgbm) when (@bgbm = n)   { background-blend-mode: normal; }
+    .bgbm(@bgbm) when (@bgbm = m)   { background-blend-mode: multiply; }
+    .bgbm(@bgbm) when (@bgbm = scr) { background-blend-mode: screen; }
+    .bgbm(@bgbm) when (@bgbm = o)   { background-blend-mode: overlay; }
+    .bgbm(@bgbm) when (@bgbm = d)   { background-blend-mode: darken; }
+    .bgbm(@bgbm) when (@bgbm = l)   { background-blend-mode: lighten; }
+    .bgbm(@bgbm) when (@bgbm = cd)  { background-blend-mode: color-dodge; }
+    .bgbm(@bgbm) when (@bgbm = sat) { background-blend-mode: saturation; }
+    .bgbm(@bgbm) when (@bgbm = c)   { background-blend-mode: color; }
+    .bgbm(@bgbm) when (@bgbm = l)   { background-blend-mode: luminosity; }
+
+// ------------------------------------------------------------------------------------------
+
+//  background-clip
+    /*
+    Defines how far the background (color or image) should extend within an element.
+    https://www.w3schools.com/cssref/css3_pr_background-clip.asp
+    */
+    .bgclip(@bgclip) when (@bgclip = bb)    { background-clip: border-box; }
+    .bgclip(@bgclip) when (@bgclip = pb)    { background-clip: padding-box; }
+    .bgclip(@bgclip) when (@bgclip = cb)    { background-clip: content-box; }
+    .bgclip(@bgclip) when (@bgclip = ini)   { background-clip: initial; }
+    .bgclip(@bgclip) when (@bgclip = inh)   { background-clip: inherit; }
+
+// ------------------------------------------------------------------------------------------
+
+//  background-color
+    /*
+    Sets the background color of an element.
+    https://www.w3schools.com/cssref/pr_background-color.asp
+    */
+    .bgc(@bgc: transparent) {
+        background-color: @bgc;
+    }
+
+// ------------------------------------------------------------------------------------------
+
+//  background-image
+    /*
+    Sets one or more background images for an element.
+    https://www.w3schools.com/cssref/pr_background-image.asp
+    */
+    .bgi(@bgi) {
+        background-image: url(@bgi);
+    }
+
+// ------------------------------------------------------------------------------------------
+
+//  background-origin
+    /*
+    Specifies the origin position (the background positioning area) of a background image.
+    https://www.w3schools.com/cssref/css3_pr_background-origin.asp
+    */
+    .bgo(@bgo) when (@bgo = pb)   { background-origin: padding-box; }
+    .bgo(@bgo) when (@bgo = bb)   { background-origin: border-box; }
+    .bgo(@bgo) when (@bgo = cb)   { background-origin: content-box; }
+    .bgo(@bgo) when (@bgo = ini)  { background-origin: initial; }
+    .bgo(@bgo) when (@bgo = inh)  { background-origin: inherit; }
+
+// ------------------------------------------------------------------------------------------
+
+//  background-position
+    /*
+    Sets the starting position of a background image.
+    https://www.w3schools.com/cssref/pr_background-position.asp
+    */
+    .bgp(@bgp) {
+        background-position: @bgp;
+    }
+
+// ------------------------------------------------------------------------------------------
+    
+    //  background-repeat
+    /*
+    Sets if/how a background image will be repeated.
+    https://www.w3schools.com/cssref/pr_background-repeat.asp
+    */
+    .bgr(@bgr) when (@bgr = r)    { background-repeat: repeat; }
+    .bgr(@bgr) when (@bgr = rx)   { background-repeat: repeat-x; }
+    .bgr(@bgr) when (@bgr = ry)   { background-repeat: repeat-y; }
+    .bgr(@bgr) when (@bgr = nr)   { background-repeat: no-repeat; }
+    .bgr(@bgr) when (@bgr = ini)  { background-repeat: initial; }
+    .bgr(@bgr) when (@bgr = inh)  { background-repeat: inherit; }
+
+// ------------------------------------------------------------------------------------------
+
+//  background-size
+    /*
+    Specifies the size of the background images.
+    https://www.w3schools.com/cssref/css3_pr_background-size.asp
+    */
+    .bgs(@bgs: initial) {
+        background-size: @bgs;
+    }
+
+// ------------------------------------------------------------------------------------------

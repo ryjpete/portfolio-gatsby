@@ -1,0 +1,187 @@
+//  font
+    /*
+    Shorthand for...
+    - font-style (not in use)
+    - font-variant (not in use)
+    - font-weight
+    - font-size / line-height
+    - font-family
+    https://www.w3schools.com/cssref/pr_font_font.asp
+    */
+    .font(@ff, @fs, @lh, @fw) {
+      font: @fw @fs/@lh @ff;
+    }
+
+// ------------------------------------------------------------------------------------------
+
+//  font-family
+    /*
+    Specifies the font for an element.
+    https://www.w3schools.com/cssref/pr_font_font-family.asp
+    */
+    .ff(@ff, @fb) {
+      font-family: @ff, @fb;
+    }
+
+// ------------------------------------------------------------------------------------------
+
+//  font-size
+    /*
+    Sets the size of a font.
+    https://www.w3schools.com/cssref/pr_font_font-size.asp
+    */
+    .fs(@fs) {
+      font-size: @fs;
+    }
+
+// ------------------------------------------------------------------------------------------
+
+//  font-stretch
+    /*
+    Make text narrower (condensed) or wider (expanded).
+    https://www.w3schools.com/cssref/css3_pr_font-stretch.asp
+    */
+    .fstr(@fstr) when (@fstr = uc)  { font-stretch: ultra-condensed; }
+    .fstr(@fstr) when (@fstr = ec)  { font-stretch: extra-condensed; }
+    .fstr(@fstr) when (@fstr = c)   { font-stretch: condensed; }
+    .fstr(@fstr) when (@fstr = sc)  { font-stretch: semi-condensed; }
+    .fstr(@fstr) when (@fstr = n)   { font-stretch: normal; }
+    .fstr(@fstr) when (@fstr = se)  { font-stretch: semi-expanded; }
+    .fstr(@fstr) when (@fstr = e)   { font-stretch: expanded; }
+    .fstr(@fstr) when (@fstr = ee)  { font-stretch: extra-expanded; }
+    .fstr(@fstr) when (@fstr = ue)  { font-stretch: ultra-expanded; }
+    .fstr(@fstr) when (@fstr = ini) { font-stretch: initial; }
+    .fstr(@fstr) when (@fstr = inh) { font-stretch: inherit; }
+
+// ------------------------------------------------------------------------------------------
+
+//  font-style
+    /*
+    Specifies the font style for a text.
+    https://www.w3schools.com/cssref/pr_font_font-style.asp
+    */
+    .fsty(@fsty) when (@fsty = n)   { font-style: normal; }
+    .fsty(@fsty) when (@fsty = ita) { font-style: italic; }
+    .fsty(@fsty) when (@fsty = o)   { font-style: oblique; }
+    .fsty(@fsty) when (@fsty = ini) { font-style: initial; }
+    .fsty(@fsty) when (@fsty = inh) { font-style: inherit; }
+
+// ------------------------------------------------------------------------------------------
+
+//  font-variant
+    /*
+    Specifies whether or not a text should be displayed in a small-caps font.
+    https://www.w3schools.com/cssref/pr_font_font-variant.asp
+    */
+    .fv(@fv) when (@fv = n)   { font-variant: normal; }
+    .fv(@fv) when (@fv = sc)  { font-variant: small-caps; }
+    .fv(@fv) when (@fv = ini) { font-variant: initial; }
+    .fv(@fv) when (@fv = inh) { font-variant: inherit; }
+
+// ------------------------------------------------------------------------------------------
+
+//  font-variant-caps
+    /*
+    Controls the usage of alternate glyphs for capital letters.
+    https://www.w3schools.com/cssref/css3_pr_font-variant-caps.asp
+    */
+    .fvc(@fvc) when (@fvc = n)    { font-variant-caps: normal; }
+    .fvc(@fvc) when (@fvc = sc)   { font-variant-caps: small-caps; }
+    .fvc(@fvc) when (@fvc = asc)  { font-variant-caps: all-small-caps; }
+    .fvc(@fvc) when (@fvc = pc)   { font-variant-caps: petite-caps; }
+    .fvc(@fvc) when (@fvc = apc)  { font-variant-caps: all-petite-caps; }
+    .fvc(@fvc) when (@fvc = uni)  { font-variant-caps: unicase; }
+    .fvc(@fvc) when (@fvc = tc)   { font-variant-caps: titling-caps; }
+    .fvc(@fvc) when (@fvc = ini)  { font-variant-caps: initial; }
+    .fvc(@fvc) when (@fvc = inh)  { font-variant-caps: inherit; }
+    .fvc(@fvc) when (@fvc = uns)  { font-variant-caps: unset; }
+
+// ------------------------------------------------------------------------------------------
+
+//  font-weight
+    /*
+    Sets how thick or thin characters in text should be displayed.
+    https://www.w3schools.com/cssref/pr_font_weight.asp
+    */
+    .fw(@fw) {
+      font-weight: @fw;
+    }
+
+// ------------------------------------------------------------------------------------------
+
+//  letter-spacing
+    /*
+    Increases or decreases the space between characters in a text.
+    https://www.w3schools.com/cssref/pr_text_letter-spacing.asp
+    */
+    .ls(@ls) {
+      letter-spacing: @ls;
+    }
+
+// ------------------------------------------------------------------------------------------
+
+//  line-height
+    /*
+    Specifies the height of a line.
+    https://www.w3schools.com/cssref/pr_dim_line-height.asp
+    */
+    .lh(@lh) {
+      line-height: @lh;
+    }
+
+// ------------------------------------------------------------------------------------------
+
+//  text-align
+    /*
+    Specifies the horizontal alignment of text in an element.
+    https://www.w3schools.com/cssref/pr_text_text-align.asp
+    */
+    .ta(@ta) when (@ta = l)   { text-align: left; }
+    .ta(@ta) when (@ta = r)   { text-align: right; }
+    .ta(@ta) when (@ta = c)   { text-align: center; }
+    .ta(@ta) when (@ta = j)   { text-align: justify; }
+    .ta(@ta) when (@ta = ini) { text-align: initial; }
+    .ta(@ta) when (@ta = inh) { text-align: inherit; }
+
+// ------------------------------------------------------------------------------------------
+
+//  text-decoration
+    /*
+    Specifies the decoration added to text, and is a shorthand property for:
+    - text-decoration-line (req)
+    - text-decoration-color
+    - text-decoration-style
+    https://www.w3schools.com/cssref/pr_text_text-decoration.asp
+    */
+    .td(@tdl: underline, @tdc: initial, @tdsty: solid) {
+      text-decoration-line: @tdl;
+      text-decoration-color: @tdc;
+      text-decoration-style: @tdsty;
+    }
+
+// ------------------------------------------------------------------------------------------
+
+//  text-shadow
+    /*
+    Adds shadow to text.
+    https://www.w3schools.com/cssref/css3_pr_text-shadow.asp
+    */
+    .ts(@h, @v, @b, @c) {
+      text-shadow: @h @v @b @c;
+    }
+
+// ------------------------------------------------------------------------------------------
+
+//  text-transform
+    /*
+    Controls the capitalization of text.
+    https://www.w3schools.com/cssref/pr_text_text-transform.asp
+    */
+    .tt(@tt) when (@tt = n)   { text-transform: none; }
+    .tt(@tt) when (@tt = c)   { text-transform: capitalize; }
+    .tt(@tt) when (@tt = u)   { text-transform: uppercase; }
+    .tt(@tt) when (@tt = l)   { text-transform: lowercase; }
+    .tt(@tt) when (@tt = ini) { text-transform: initial; }
+    .tt(@tt) when (@tt = inh) { text-transform: inherit; }
+
+// ------------------------------------------------------------------------------------------

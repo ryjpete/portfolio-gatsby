@@ -1,0 +1,63 @@
+//  margin
+    /*
+    Sets the margins for an element.
+    Shorthand for...
+    - margin-top
+    - margin-right
+    - margin-bottom
+    - margin-left
+    https://www.w3schools.com/cssref/pr_margin.asp
+    */
+    .mar(@mt: 0; @mr: 0; @mb: 0; @ml: 0;) {
+      margin: @mt @mr @mb @ml;
+    }
+
+// ------------------------------------------------------------------------------------------
+
+//  margin
+    /*
+    Used for setting a single margin
+    */    
+    .m(@m, @num) when (@m = t) { margin-top: ~'@{num}'; };
+    .m(@m, @num) when (@m = r) { margin-right: ~'@{num}'; };
+    .m(@m, @num) when (@m = b) { margin-bottom: ~'@{num}'; };
+    .m(@m, @num) when (@m = l) { margin-left: ~'@{num}'; };
+
+// ------------------------------------------------------------------------------------------
+
+//  marAuto
+    /*
+    custom - used for setting margins to auto
+    */    
+    .marAuto() {
+      margin: auto;
+    }
+
+// ------------------------------------------------------------------------------------------
+
+//  padding
+    /*
+    Sets the paddings for an element.
+    Shorthand for...
+    - padding-top
+    - padding-right
+    - padding-bottom
+    - padding-left
+    https://www.w3schools.com/cssref/pr_padding.asp
+    */
+    .pad(@pt: 0; @pr: 0; @pb: 0; @pl: 0;) {
+      padding: @pt @pr @pb @pl;
+    }
+
+// ------------------------------------------------------------------------------------------
+
+//  padding
+    /*
+    Used for setting a single padding
+    */    
+    .p(@p, @num) when (@p = t) { padding-top: ~'@{num}'; };
+    .p(@p, @num) when (@p = r) { padding-right: ~'@{num}'; };
+    .p(@p, @num) when (@p = b) { padding-bottom: ~'@{num}'; };
+    .p(@p, @num) when (@p = l) { padding-left: ~'@{num}'; };
+
+// ------------------------------------------------------------------------------------------
