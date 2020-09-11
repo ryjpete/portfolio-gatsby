@@ -1,11 +1,8 @@
 @import '../styles/imports.less';
 
 .level {
-  display: inline-block;
+  .bgc(rgba(255,255,255,0.1));
+  display: table;
   .mar();
-  max-width: 50%;
-
-  @media (max-width: 767px) {
-    max-width: 75%;
-  }
+  .pad(15px,10px,15px,10px);
 }

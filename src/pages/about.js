@@ -1,25 +1,37 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+
 import aboutStyles from './about.module.less'
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo/seo'
 
-class About extends Component {
-  render() {
-    return (
-      <Layout>
-        <SEO
-          title="About RJP"
-          description="Ryan Peterson is a full-stack web developer based in the Chicagoland area." />
-          
-        <h1>About RJP</h1>
-        <div className={aboutStyles.level}>
-          <p>personally, i'm a creative. i've spent my entire life drawing or writing or designing. creativity is where my passion lies.</p>
-          <p>that creativity also belongs to my development side. i'm always searching to push my personal knowledge, to figure out different ways to build, to quench the technological thirst.</p>
-          <p>i've learned over the years that it's neverending. whether it's a new book idea or a realization of new libraries/frameworks/languages, the creative education never stops.</p>
-        </div>
-      </Layout>
-    )
-  }
+const About = () => {
+  const data = useStaticQuery(graphql`
+    query AboutQuery {
+      contentfulAboutPage {
+        pageTitle
+        pageItems {
+          json
+        }
+      }
+    }
+  `)
+
+  // console.log(data)
+
+  return (
+    <Layout>
+      <SEO
+        title="About RJP"
+        description="Ryan Peterson is a full-stack web developer based in the Chicagoland area." />
+        
+      <h1>{data.contentfulAboutPage.pageTitle}</h1>
+      
+      {data.contentfulAboutPage.pageItems.json.content.map((item, index) => {
+        return <p key={index} className={aboutStyles.level}>{item.content[0].value}</p>
+      })}
+    </Layout>
+  )
 }
 
 export default About
