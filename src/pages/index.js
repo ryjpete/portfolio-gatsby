@@ -1,23 +1,39 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+
 import homeStyles from './index.module.less'
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo/seo'
 
-class Home extends Component {
-  render() {
-    return (
-      <Layout>
-        <SEO
-          title="Home"
-          description="The portfolio site of Ryan Peterson, full-stack web developer." />
-          
-        <h1>Portfolio of RJP</h1>
-        <p className={homeStyles.level}>this site is never finished. it progresses. constantly. yet it will never be complete.</p>
-        <p className={`${homeStyles.level} ${homeStyles.level_1}`}>this site will display some of the work i've been on. some of it will be independent work. some will be agency work.</p>
-        <p className={`${homeStyles.level} ${homeStyles.level_2}`}>i will try to give a description of my tasks for each.</p>
-      </Layout>
-    )
-  }
+const Home = () => {
+  // contentfulHomePage(id: {eq: "f6e5db1e-ecd3-5e1d-9b44-429172070cb5"}) {
+  const data = useStaticQuery(graphql`
+    query HomeQuery {
+      contentfulHomePage {
+        pageTitle
+        pageItems {
+          json
+        }
+      }
+    }
+  `)
+
+  // console.log(data)
+  
+  return (
+    <Layout>
+      <SEO
+        title="Home"
+        description="The portfolio site of Ryan Peterson, full-stack web developer." />
+        
+      <h1>{data.contentfulHomePage.pageTitle}</h1>
+
+      {data.contentfulHomePage.pageItems.json.content.map((item, index) => {
+        return <p key={index} className={`${homeStyles.level}`}>{item.content[0].value}</p>
+      })}
+    </Layout>
+  )
 }
+
 
 export default Home
