@@ -1,0 +1,43 @@
+//  display
+    /*
+    Specifies the display behavior (the type of rendering box) of an element.
+    https://www.w3schools.com/cssref/pr_class_display.asp
+    */    
+    .dis(@dis) when (@dis = in)   { display: inline; }
+    .dis(@dis) when (@dis = b)    { display: block; }
+    .dis(@dis) when (@dis = c)    { display: contents; }
+    .dis(@dis) when (@dis = f)    { display: flex; }
+    .dis(@dis) when (@dis = g)    { display: grid; }
+    .dis(@dis) when (@dis = inb)  { display: inline-block; }
+    .dis(@dis) when (@dis = inf)  { display: inline-flex; }
+    .dis(@dis) when (@dis = ing)  { display: inline-grid; }
+    .dis(@dis) when (@dis = int)  { display: inline-table; }
+    .dis(@dis) when (@dis = li)   { display: list-item; }
+    .dis(@dis) when (@dis = ri)   { display: run-in; }
+    .dis(@dis) when (@dis = t)    { display: table; }
+    .dis(@dis) when (@dis = tcp)  { display: table-caption; }
+    .dis(@dis) when (@dis = tcg)  { display: table-column-group; }
+    .dis(@dis) when (@dis = thg)  { display: table-header-group; }
+    .dis(@dis) when (@dis = tfg)  { display: table-footer-group; }
+    .dis(@dis) when (@dis = trg)  { display: table-row-group; }
+    .dis(@dis) when (@dis = tcel) { display: table-cell; }
+    .dis(@dis) when (@dis = tcol) { display: table-column; }
+    .dis(@dis) when (@dis = tr)   { display: table-row; }
+    .dis(@dis) when (@dis = n)    { display: none; }
+    .dis(@dis) when (@dis = ini)  { display: initial; }
+    .dis(@dis) when (@dis = inh)  { display: inherit; }
+
+// ------------------------------------------------------------------------------------------
+
+//  floats
+    /*
+    Specifies how an element should float.
+    https://www.w3schools.com/cssref/pr_class_float.asp
+    */    
+    .fl(@fl) when (@fl = n)   { float: none; }
+    .fl(@fl) when (@fl = l)   { float: left; }
+    .fl(@fl) when (@fl = r)   { float: right; }
+    .fl(@fl) when (@fl = ini) { float: initial; }
+    .fl(@fl) when (@fl = inh) { float: inherit; }
+
+// ------------------------------------------------------------------------------------------

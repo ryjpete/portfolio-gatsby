@@ -38,7 +38,7 @@ class Resume extends Component {
               </ul>
               <div className={resumeStyles.keySpecs}>
                 <h6>Key Specs:</h6>
-                <ul class="specs">
+                <ul className="specs">
                   <li>WordPress</li>
                   <li>JavaScript jQuery</li>
                   <li>LESS</li>
@@ -72,7 +72,7 @@ class Resume extends Component {
               </ul>
               <div className={resumeStyles.keySpecs}>
                 <h6>Key Specs:</h6>
-                <ul class="specs">
+                <ul className="specs">
                   <li>Drupal</li>
                   <li>jQuery</li>
                   <li>Responsive Design</li>
@@ -95,7 +95,7 @@ class Resume extends Component {
               </ul>
               <div className={resumeStyles.keySpecs}>
                 <h6>Key Specs:</h6>
-                <ul class="specs">
+                <ul className="specs">
                   <li>Magento</li>
                   <li>X-Cart</li>
                   <li>HTML / CSS</li>
@@ -118,7 +118,7 @@ class Resume extends Component {
               </ul>
               <div className={resumeStyles.keySpecs}>
                 <h6>Key Specs:</h6>
-                <ul class="specs">
+                <ul className="specs">
                   <li>Photoshop</li>
                   <li>Illustrator</li>
                   <li>WordPress</li>
@@ -141,7 +141,7 @@ class Resume extends Component {
               </ul>
               <div className={resumeStyles.keySpecs}>
                 <h6>Key Specs:</h6>
-                <ul class="specs">
+                <ul className="specs">
                   <li>Joomla!</li>
                   <li>Flash</li>
                   <li>ActionScript</li>
@@ -163,7 +163,7 @@ class Resume extends Component {
               </ul>
               <div className={resumeStyles.keySpecs}>
                 <h6>Key Specs:</h6>
-                <ul class="specs">
+                <ul className="specs">
                   <li>Flash</li>
                   <li>ActionScript</li>
                   <li>Photoshop</li>
