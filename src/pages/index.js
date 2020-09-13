@@ -13,6 +13,11 @@ const Home = () => {
         pageTitle
         pageItems {
           json
+          content {
+            content {
+              value
+            }
+          }
         }
       }
     }
@@ -29,7 +34,9 @@ const Home = () => {
       <h1>{data.contentfulHomePage.pageTitle}</h1>
 
       {data.contentfulHomePage.pageItems.json.content.map((item, index) => {
-        return <p key={index} className={`${homeStyles.level}`}>{item.content[0].value}</p>
+        let paragraph = item.content[0].value.replace('&nbsp;', '-')
+
+        return <p key={index} className={`${homeStyles.level}`}>{paragraph}</p>
       })}
     </Layout>
   )
