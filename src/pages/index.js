@@ -38,7 +38,7 @@ const Home = () => {
         description="The portfolio site of Ryan Peterson, full-stack web developer." />
         
       {/* <h1>{data.contentfulHomePage.pageTitle}</h1> */}
-      <h1>
+      <h1 className={homeStyles.pageTitle}>
         {newPageTitleArray.map((item, index) => {
           item = item.replace('.', '')
           return <span key={index}>{item}.</span>
