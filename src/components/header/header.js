@@ -1,13 +1,18 @@
 import React from 'react'
 import { Link } from 'gatsby'
+
 import headerStyles from './header.module.less'
+import logo from './logo_bl.png'
 
 export default function Header() {
+  console.log(logo)
   return (
     <header className={headerStyles.header}>
       <Link to ='/'>
-        <img className={headerStyles.logo} src='http://ryanjenningspeterson.com/wp-content/uploads/2014/10/logo.png' alt='portfolio of rjp' />
+        <img className={headerStyles.logo} src={logo} alt='rjp' />
       </Link>
+
+      <p className={headerStyles.tagline}>portfolio site of developer<span>Ryan J Peterson</span></p>
 
       <nav className={headerStyles.navigation}>
         <ul>
@@ -17,6 +22,9 @@ export default function Header() {
           <li>
             <Link to='/about/'>about</Link>
           </li>
+          {/* <li>
+            <Link to='/portfolio/'>work</Link>
+          </li> */}
           <li>
             <Link to='/resume/'>resume</Link>
           </li>

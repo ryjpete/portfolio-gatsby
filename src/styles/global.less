@@ -2,8 +2,9 @@
 
 html,
 body {
-  .bgc(@bg_dark);
-  color: @white;
+  // .bgc(@bg_dark);
+  .bgc(@white);
+  color: @bg_dark;
   .ff('Inconsolata', monospace);
   .fs(62.5%);
   .mar();
@@ -14,11 +15,39 @@ body {
   box-sizing: border-box;
 }
 
+h1,
+h2,
+h3 {
+  .ff('Titillium Web',sans-serif);
+}
 h1 {
+  // background: linear-gradient(to bottom, #00b09b 20%,#96c93d 80%);
+  // .bgclip(t);
   .fs(7rem);
-  .fw(200);
+  .fw(900);
+  .ls(-0.1rem);
   .m(t,0);
   .m(b,3rem);
+  .tt(u);
+
+
+  background: linear-gradient(to bottom, #00b09b 0%, #96c93d 50%, #00b09b 100%);
+  background-size: auto 200%;
+  
+  color: @bg_dark;
+  text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  animation: shine 10s linear infinite;
+  @keyframes shine {
+    to {
+      background-position: center 200%;
+    }
+  }
+
+
 
   @media (max-width: 1200px) {
     .fs(6rem);

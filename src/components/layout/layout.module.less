@@ -1,38 +1,71 @@
 @import '../../styles/imports.less';
 
 .container {
-  display: flex;
-  min-height: 100vh;
+  .dis(f);
+  .minH(100vh);
 
-  main {
-    display: flex;
-    flex: 1;
+  // main {
+  //   .dis(f);
+  //   flex: 1;
 
-    @media (max-width: 767px) {
-      display: block;
-    }
+  //   @media (max-width: 767px) {
+  //     .dis(b);
+  //   }
 
     .primary {
-      align-items: flex-start;
-      display: flex;
-      flex: 1;
+      .ai(fs);
+      .dis(f);
+      .flex(1,1,auto);
       .m(b,0);
-      .p(t,10rem);
-      .p(l,100px);
+      // .p(t,10rem);
+      // .p(l,100px);
+      .pad(14rem,5rem,2rem,5rem);
       
       @media (max-width: 767px) {
-        .p(t,175px);
-        .p(l,0);
+        .p(t,125px);
+        // .p(l,0);
       }
 
       .content {
-        .pad(10%,10%,10%,10%);
-        width: 100%;
+        .h(100%);
+        // .pad(10%,10%,10%,10%);
+        .w(100%);
         
-        @media (max-width: 767px) {
-          .pad(5%,10%,5%,10%);
-        }
+        // @media (max-width: 767px) {
+        //   .pad(5%,10%,5%,10%);
+        // }
       }
     }
-  }
+  // }
+
+  // #background {
+  //   background: linear-gradient(310deg, #ffffff, #ececec, #e7f0ff);
+  //   background-size: 600% 600%;
+
+  //   -webkit-animation: bgAnimation 30s ease infinite;
+  //   -moz-animation: bgAnimation 30s ease infinite;
+  //   -o-animation: bgAnimation 30s ease infinite;
+  //   animation: bgAnimation 30s ease infinite;
+  // }
+
+  // @-webkit-keyframes bgAnimation {
+  //     0%{background-position:84% 0%}
+  //     50%{background-position:17% 100%}
+  //     100%{background-position:84% 0%}
+  // }
+  // @-moz-keyframes bgAnimation {
+  //     0%{background-position:84% 0%}
+  //     50%{background-position:17% 100%}
+  //     100%{background-position:84% 0%}
+  // }
+  // @-o-keyframes bgAnimation {
+  //     0%{background-position:84% 0%}
+  //     50%{background-position:17% 100%}
+  //     100%{background-position:84% 0%}
+  // }
+  // @keyframes bgAnimation {
+  //     0%{background-position:84% 0%}
+  //     50%{background-position:17% 100%}
+  //     100%{background-position:84% 0%}
+  // }
 }
