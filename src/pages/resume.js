@@ -71,7 +71,7 @@ const Resume = () => {
         title="Online Resume of RJP"
         description="Online resume of full-stack developer Ryan Peterson." />
 
-      <h1>{data.contentfulResumePage.pageTitle}</h1>
+      <h1 className={resumeStyles.pageTitle}>{data.contentfulResumePage.pageTitle}</h1>
       <h3>{data.contentfulResumePage.subTitle}</h3>
       <h6>{data.contentfulResumePage.location}</h6>
 

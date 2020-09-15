@@ -35,7 +35,8 @@ module.exports = {
       options: {
         google: {
           families: [
-            `Inconsolata`,
+            `Inconsolata:200,400,700.900`,
+            `Titillium Web:400,900`,
           ],
         },
       },
@@ -47,5 +48,38 @@ module.exports = {
         accessToken: `KZL94DdQ1ifxQppD-e0dcVWF4z-RCY1-eAySHxL_nFs`,
       },
     },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `pages`,
+    //     path: `${__dirname}/src/pages/`,
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `data`,
+    //     path: `${__dirname}/src/data/`,
+    //     ignore: [`**/\.*`], // ignore files starting with a dot
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-plugin-sharp`,
+    //   options: {
+    //     // Available options and their defaults:
+    //     base64Width: 20,
+    //     forceBase64Format: ``, // valid formats: png,jpg,webp
+    //     useMozJpeg: process.env.GATSBY_JPEG_ENCODER === `MOZJPEG`,
+    //     stripMetadata: true,
+    //     defaultQuality: 50,
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-transformer-sharp`,
+    //   options: {
+    //     // The option defaults to true
+    //     checkSupportedExtensions: false,
+    //   },
+    // },
   ]
 }

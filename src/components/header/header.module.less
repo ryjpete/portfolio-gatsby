@@ -1,61 +1,86 @@
 @import '../../styles/imports.less';
 
-.header,
-.navigation {
-  .bgc(@bg_dark);
-  .bdc(rgba(255,255,255,0.075));
-  .bds(dsh);
-  display: flex;
+.header {
+  .bgc(@white);
+  .dis(f);
   position: fixed;
   top: 0;
+  right: 0;
+  left: 0;
   z-index: 100;
 }
 
 .header {
-  align-items: center;
-  .bdw(0 5px 0 0);
-  bottom: 0;
-  left: 0;
-  width: 100px;
+  .ai(c);
+  .pad(2rem,2rem,2rem,2rem);
 
-  @media (max-width: 767px) {
-    .bdw(0 0 1px 0);
-    justify-content: center;
-    right: 0;
-    bottom: auto;
-    padding: 1rem 0;
-    width: 100%;
+  // @media (max-width: 767px) {
+  //   .jc(c);
+  //   right: 0;
+  //   bottom: auto;
+  //   .pad(1rem,0,1rem,0);
+  //   .w(100%);
+  // }
+
+  > * {
+    .ai(c);
+    .dis(f);
+  }
+
+  a {
+    .m(r,2.5rem);
   }
 
   .logo {
-    display: flex;
-    height: auto;
+    .h();
     .marAuto();
-    max-width: 200px;
-    width: 85%;
+    .maxW(100px);
+    .w(85%);
 
-    @media (max-width: 767px) {
-      max-width: 75px;
+    // @media (max-width: 767px) {
+    //   .maxW(75px);
+    // }
+  }
+
+  .tagline {
+    .dis(b);
+    // .ff('Sarpanch',sans-serif);
+    .ff('Titillium Web',sans-serif);
+    .fs(1.4rem);
+    .fw(400);
+    .lh(1.6rem);
+    .tt(u);
+
+      @media (max-width: 767px) {
+        .dis(n);
+      }
+
+    span {
+      .dis(b);
+      .fs(2rem);
+      .fw(900);
+      .ls(0.43rem);
     }
   }
 
   .navigation {
     .bdw(0 0 5px 0);
-    justify-content: flex-end;
+    .jc(fe);
     .ls(.1rem);
+    .m(l,auto);
     .pad(3rem,1rem,3rem,1rem);
     right: 0;
     left: 101px;
 
     @media (max-width: 767px) {
-      justify-content: center;
+      .jc(c);
       .pad(1rem,0,1rem,0);
       top: 85px;
       left: 0;
     }
 
     ul {
-      display: flex;
+      .dis(f);
       list-style: none;
       .mar();
       .pad();
@@ -64,10 +89,10 @@
         .m(l,1.5rem);
 
         a {
-          .bgc(rgba(255,255,255,0.1));
-          color: #fff;
-          display: block;
+          color: @bg_dark;
+          .dis(b);
           .fs(1.2rem);
+          .fw(700);
           .pad(1rem,.5rem,1rem,.5rem);
         }
       }

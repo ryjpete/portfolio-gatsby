@@ -1,0 +1,151 @@
+//  align-content
+    /*
+    Modifies the behavior of the flex-wrap property. It is similar to align-items, but instead of aligning flex items, it aligns flex lines.
+    https://www.w3schools.com/cssref/css3_pr_align-content.asp
+    */
+    .ac(@ac) when (@ac = s)     { align-content: stretch; }
+    .ac(@ac) when (@ac = c)     { align-content: center; }
+    .ac(@ac) when (@ac = fs)    { align-content: flex-start; }
+    .ac(@ac) when (@ac = fe)    { align-content: flex-end; }
+    .ac(@ac) when (@ac = sb)    { align-content: space-between; }
+    .ac(@ac) when (@ac = sa)    { align-content: space-around; }
+    .ac(@ac) when (@ac = ini)   { align-content: initial; }
+    .ac(@ac) when (@ac = inh)   { align-content: inherit; }
+
+// ------------------------------------------------------------------------------------------
+
+//  align-items
+    /*
+    Specifies the default alignment for items inside the flexible container.
+    https://www.w3schools.com/cssref/css3_pr_align-items.asp
+    */
+    .ai(@ai) when (@ai = s)     { align-items: stretch; }
+    .ai(@ai) when (@ai = c)     { align-items: center; }
+    .ai(@ai) when (@ai = fs)    { align-items: flex-start; }
+    .ai(@ai) when (@ai = fe)    { align-items: flex-end; }
+    .ai(@ai) when (@ai = b)     { align-items: baseline; }
+    .ai(@ai) when (@ai = ini)   { align-items: initial; }
+    .ai(@ai) when (@ai = inh)   { align-items: inherit; }
+
+// ------------------------------------------------------------------------------------------
+
+//  align-self
+    /*
+    Specifies the alignment for the selected item inside the flexible container.
+    https://www.w3schools.com/cssref/css3_pr_align-self.asp
+    */
+    .as(@as) when (@as = a)     { align-self: auto; }
+    .as(@as) when (@as = s)     { align-self: stretch; }
+    .as(@as) when (@as = c)     { align-self: center; }
+    .as(@as) when (@as = fs)    { align-self: flex-start; }
+    .as(@as) when (@as = fe)    { align-self: flex-end; }
+    .as(@as) when (@as = b)     { align-self: baseline; }
+    .as(@as) when (@as = ini)   { align-self: initial; }
+    .as(@as) when (@as = inh)   { align-self: inherit; }
+
+// ------------------------------------------------------------------------------------------
+
+//  flex
+    /*
+    Sets the flexible length on flexible items. Shorthand for:
+    - flex-grow
+    - flex-shrink
+    - flex-basis
+    https://www.w3schools.com/cssref/css3_pr_flex.asp
+    */
+    .flex(@fg, @fs, @fb) {
+      flex-grow: @fg;
+      flex-shrink: @fs;
+      flex-basis: @fb;
+    }
+
+// ------------------------------------------------------------------------------------------
+
+//  flex-basis
+    /*
+    Specifies the initial length of a flexible item.
+    https://www.w3schools.com/cssref/css3_pr_flex-basis.asp
+    */
+    .flexb(@fb) {
+      flex-basis: @fb;
+    }
+
+// ------------------------------------------------------------------------------------------
+
+//  flex-direction
+    /*
+    Specifies the direction of the flexible items.
+    https://www.w3schools.com/cssref/css3_pr_flex-direction.asp
+    */
+    .flexd(@fd) when (@fd = r)     { flex-direction: row; }
+    .flexd(@fd) when (@fd = rr)    { flex-direction: row-reverse; }
+    .flexd(@fd) when (@fd = c)     { flex-direction: column; }
+    .flexd(@fd) when (@fd = cr)    { flex-direction: column-reverse; }
+    .flexd(@fd) when (@fd = ini)   { flex-direction: initial; }
+    .flexd(@fd) when (@fd = inh)   { flex-direction: inherit; }
+
+// ------------------------------------------------------------------------------------------
+
+//  flex-flow
+    /*
+    Shorthand property for:
+    - flex-direction
+    - flex-wrap
+    https://www.w3schools.com/cssref/css3_pr_flex-flow.asp
+    */
+    .flexf(@fd, @fw) {
+      flex-direction: @fd;
+      flex-wrap: @fw;
+    }
+
+// ------------------------------------------------------------------------------------------
+
+//  flex-grow
+    /*
+    Specifies how much the item will grow relative to the rest of the flexible items inside the same container.
+    https://www.w3schools.com/cssref/css3_pr_flex-grow.asp
+    */
+    .flexg(@fg) {
+      flex-grow: @fg;
+    }
+
+// ------------------------------------------------------------------------------------------
+
+//  flex-shrink
+    /*
+    Specifies how the item will shrink relative to the rest of the flexible items inside the same container.
+    https://www.w3schools.com/cssref/css3_pr_flex-shrink.asp
+    */
+    .flexs(@fs) {
+      flex-shrink: @fs;
+    }
+
+// ------------------------------------------------------------------------------------------
+
+//  flex-wrap
+    /*
+    Specifies whether the flexible items should wrap or not.
+    https://www.w3schools.com/cssref/css3_pr_flex-wrap.asp
+    */
+    .flexw(@fw) when (@fw = n)    { flex-wrap: nowrap; }
+    .flexw(@fw) when (@fw = w)    { flex-wrap: wrap; }
+    .flexw(@fw) when (@fw = wr)   { flex-wrap: wrap-reverse; }
+    .flexw(@fw) when (@fw = ini)  { flex-wrap: initial; }
+    .flexw(@fw) when (@fw = inh)  { flex-wrap: inherit; }
+
+// ------------------------------------------------------------------------------------------
+
+//  justify-content
+    /*
+    Aaligns the flexible container's items when the items do not use all available space on the main-axis (horizontally).
+    https://www.w3schools.com/cssref/css3_pr_justify-content.asp
+    */
+    .jc(@jc) when (@jc = fs)    { justify-content: flex-start; }
+    .jc(@jc) when (@jc = fe)    { justify-content: flex-end; }
+    .jc(@jc) when (@jc = c)     { justify-content: center; }
+    .jc(@jc) when (@jc = sb)    { justify-content: space-between; }
+    .jc(@jc) when (@jc = sa)    { justify-content: space-around; }
+    .jc(@jc) when (@jc = ini)   { justify-content: initial; }
+    .jc(@jc) when (@jc = inh)   { justify-content: inherit; }
+
+// ------------------------------------------------------------------------------------------

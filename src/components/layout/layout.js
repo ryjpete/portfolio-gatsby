@@ -5,7 +5,7 @@ import Header from '../header/header'
 export default function Layout({ children }) {
   return (
     <div className={layoutStyles.container}>
-      <main> 
+      {/* <main>  */}
         <Header />
         
         <article className={layoutStyles.primary}>
@@ -13,7 +13,9 @@ export default function Layout({ children }) {
             {children}
           </div>
         </article>
-      </main>
+      {/* </main> */}
+
+      {/* <canvas id={layoutStyles.background}></canvas> */}
     </div>
   )
 }
