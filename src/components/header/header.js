@@ -17,16 +17,22 @@ export default function Header() {
       <nav className={headerStyles.navigation}>
         <ul>
           <li>
-            <Link to='/'>home</Link>
+            <Link
+              to='/'
+              activeClassName={headerStyles.active}>home</Link>
           </li>
           <li>
-            <Link to='/about/'>about</Link>
+            <Link
+              to='/about/'
+              activeClassName={headerStyles.active}>about</Link>
           </li>
           {/* <li>
             <Link to='/portfolio/'>work</Link>
           </li> */}
           <li>
-            <Link to='/resume/'>resume</Link>
+            <Link
+              to='/resume/'
+              activeClassName={headerStyles.active}>resume</Link>
           </li>
         </ul>
       </nav>
