@@ -60,6 +60,19 @@ const Resume = () => {
           }
         }
       }
+      
+      contentfulPageModel(contentful_id: {eq: "7yY1O7UqKSOwuTPezI6rrZ"}) {
+        pageModelReferences {
+          ... on ContentfulResumeTechnicalSkillsSet {
+            skillSetTitle
+            order
+            skillsReference {
+              skill
+              id
+            }
+          }
+        }
+      }
     }
   `)
 
@@ -75,9 +88,29 @@ const Resume = () => {
       <h3>{data.contentfulResumePage.subTitle}</h3>
       <h6>{data.contentfulResumePage.location}</h6>
 
-      <section className={`${resumeStyles.aboutSection}`}>
+      <section className={resumeStyles.aboutSection}>
         <h2>{data.contentfulResumeAbout.title}</h2>
         <p>{data.contentfulResumeAbout.paragraph.json.content[0].content[0].value}</p>
+      </section>
+
+      <section className={resumeStyles.skillsSection}>
+        <h2>Technical Skills</h2>
+        
+        <div className={resumeStyles.skillsBlock}>
+          {data.contentfulPageModel.pageModelReferences.map((ref, index) => {
+            return (
+              <div className={resumeStyles.area}>
+                <h5>{ref.skillSetTitle}</h5>
+                
+                <ul>
+                  {ref.skillsReference.map((skill) => {
+                    return <li key={skill.id}>{skill.skill}</li>
+                  })}
+                </ul>
+              </div>
+            )
+          })}
+        </div>
       </section>
 
       <section>

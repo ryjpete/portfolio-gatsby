@@ -6,16 +6,6 @@ import Layout from '../components/layout/layout'
 import SEO from '../components/seo/seo'
 
 const About = () => {
-  // const data = useStaticQuery(graphql`
-  //   query AboutQuery {
-  //     contentfulAboutPage {
-  //       pageTitle
-  //       pageItems {
-  //         json
-  //       }
-  //     }
-  //   }
-  // `)
   const data = useStaticQuery(graphql`
     query AboutQuery {
       contentfulPageTitle(contentful_id: {eq: "1mLCKMjqW7LM3SG25PmJM6"}) {
@@ -29,13 +19,10 @@ const About = () => {
       }
     }
   `)
-
-  console.log(data)
-  console.log(data.contentfulOpeningContent.openingParagraph.json.content)
+  // console.log(data)
 
   const pageTitle = data.contentfulPageTitle.pageTitle
   const newPageTitleArray = pageTitle.split('. ')
-  // console.log(newPageTitleArray)
 
   return (
     <Layout>
@@ -52,11 +39,7 @@ const About = () => {
       
       {data.contentfulOpeningContent.openingParagraph.json.content.map((para, index) => {
         return <p key={index} className={aboutStyles.level}>{para.content.map((par, index) => {
-          // if (par.marks[0].type === 'italic') {
-          //   return <em>{par.value}</em>
-          // }
           return par.value
-
         })}</p>
       })}
     </Layout>
