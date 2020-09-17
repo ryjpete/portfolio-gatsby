@@ -1,26 +1,21 @@
 @import '../../styles/imports.less';
 
 .header {
+  .ai(c);
   .bgc(@white);
   .dis(f);
+  .pad(2rem,2rem,2rem,2rem);
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   z-index: 100;
-}
 
-.header {
-  .ai(c);
-  .pad(2rem,2rem,2rem,2rem);
-
-  // @media (max-width: 767px) {
-  //   .jc(c);
-  //   right: 0;
-  //   bottom: auto;
-  //   .pad(1rem,0,1rem,0);
-  //   .w(100%);
-  // }
+    @media (max-width: 767px) {
+      .dis(b);
+      .pad(1rem,1rem,1rem,1rem);
+      .ta(c);
+    }
 
   > * {
     .ai(c);
@@ -29,6 +24,11 @@
 
   a {
     .m(r,2.5rem);
+
+      @media (max-width: 767px) {
+        .dis(ib);
+        .mar();
+      }
   }
 
   .logo {
@@ -37,14 +37,14 @@
     .maxW(100px);
     .w(85%);
 
-    // @media (max-width: 767px) {
-    //   .maxW(75px);
-    // }
+      @media (max-width: 767px) {
+        .dis(b);
+        .maxW(75px);
+      }
   }
 
   .tagline {
     .dis(b);
-    // .ff('Sarpanch',sans-serif);
     .ff('Titillium Web',sans-serif);
     .fs(1.4rem);
     .fw(400);
@@ -72,12 +72,15 @@
     right: 0;
     left: 101px;
 
-    @media (max-width: 767px) {
-      .jc(c);
-      .pad(1rem,0,1rem,0);
-      top: 85px;
-      left: 0;
-    }
+      @media (max-width: 767px) {
+        .bd(t,1px,solid,rgba(0,0,0,0.1));
+        .bd(b,1px,solid,rgba(0,0,0,0.1));
+        .jc(c);
+        .m(t,1rem);
+        .pad(1rem,0,1rem,0);
+        top: 85px;
+        left: 0;
+      }
 
     ul {
       .dis(f);
