@@ -48,13 +48,13 @@ module.exports = {
         accessToken: `KZL94DdQ1ifxQppD-e0dcVWF4z-RCY1-eAySHxL_nFs`,
       },
     },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `pages`,
-    //     path: `${__dirname}/src/pages/`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+      },
+    },
     // {
     //   resolve: `gatsby-source-filesystem`,
     //   options: {

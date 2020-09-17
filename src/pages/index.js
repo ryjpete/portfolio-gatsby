@@ -17,7 +17,7 @@ const Home = () => {
 
   const pageTitle = data.contentfulPageTitle.pageTitle
   const newPageTitleArray = pageTitle.split('. ')
-  console.log(newPageTitleArray)
+  // console.log(newPageTitleArray)
   
   return (
     <Layout>

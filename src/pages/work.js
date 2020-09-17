@@ -1,17 +1,16 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 
 import workStyles from './work.module.less'
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo/seo'
+import WorkNav from '../components/workNav/workNav'
 
 const Work = () => {
   const data = useStaticQuery(graphql`
     query WorkQuery {
       contentfulPageModel(contentful_id: {eq: "6wXdbcfpTmUJ7kDinmTLiO"}) {
-        id
         pageTitle
-        pageSlug
       }
     }
   `)
@@ -23,6 +22,8 @@ const Work = () => {
         description="Ryan J Peterson's work as a developer and designer." />
 
       <h1 className={workStyles.pageTitle}>{data.contentfulPageModel.pageTitle}</h1>
+
+      <WorkNav />
 
       {/* <div className='item'>
         <h3 className='title'>Amata Law Offices</h3>

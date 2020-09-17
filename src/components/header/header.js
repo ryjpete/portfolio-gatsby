@@ -5,7 +5,6 @@ import headerStyles from './header.module.less'
 import logo from './logo_bl.png'
 
 export default function Header() {
-  console.log(logo)
   return (
     <header className={headerStyles.header}>
       <Link to ='/'>

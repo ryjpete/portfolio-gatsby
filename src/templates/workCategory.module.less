@@ -17,3 +17,18 @@
       .m(b,4rem);
     }
 }
+
+.work {
+  &Block {
+    .dis(f);
+    .flex(1,1,auto);
+  }
+
+  &Content {
+    .maxW(800px);
+
+      @media (max-width: 1200px) {
+        .maxW(none);
+      }
+  }
+}
