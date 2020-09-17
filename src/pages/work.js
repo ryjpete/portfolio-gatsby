@@ -1,19 +1,30 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 
-import portfolioStyles from './portfolio.module.less'
+import workStyles from './work.module.less'
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo/seo'
 
-const Portfolio = () => {
+const Work = () => {
+  const data = useStaticQuery(graphql`
+    query WorkQuery {
+      contentfulPageModel(contentful_id: {eq: "6wXdbcfpTmUJ7kDinmTLiO"}) {
+        id
+        pageTitle
+        pageSlug
+      }
+    }
+  `)
+
   return (
     <Layout>
       <SEO
         title='Work'
         description="Ryan J Peterson's work as a developer and designer." />
 
-      <h1>Work</h1>
+      <h1 className={workStyles.pageTitle}>{data.contentfulPageModel.pageTitle}</h1>
 
-      <div className='item'>
+      {/* <div className='item'>
         <h3 className='title'>Amata Law Offices</h3>
         <h6 className='item'>For: Connections Marketing</h6>
       </div>
@@ -51,9 +62,9 @@ const Portfolio = () => {
       <div className='item'>
         <h3 className='title'>Cook Brothers</h3>
         <h6 className='item'>For: Connections Marketing</h6>
-      </div>
+      </div> */}
     </Layout>
   )
 }
 
-export default Portfolio
+export default Work

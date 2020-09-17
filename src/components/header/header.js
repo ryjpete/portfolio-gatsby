@@ -26,9 +26,11 @@ export default function Header() {
               to='/about/'
               activeClassName={headerStyles.active}>about</Link>
           </li>
-          {/* <li>
-            <Link to='/portfolio/'>work</Link>
-          </li> */}
+          <li>
+            <Link
+              to='/work/'
+              activeClassName={headerStyles.active}>work</Link>
+          </li>
           <li>
             <Link
               to='/resume/'
