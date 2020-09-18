@@ -1,0 +1,49 @@
+//  position
+    /*
+    Specifies the type of positioning method used for an element (static, relative, absolute, fixed, or sticky).
+    https://www.w3schools.com/cssref/pr_class_position.asp
+    */
+    .pos(@p,@t,@r,@b,@l) when (@p = sta) {
+      position: static;
+    }
+    .pos(@p,@t,@r,@b,@l) when (@p = a) {
+      position: absolute;
+      top: @t;
+      right: @r;
+      bottom: @b;
+      left: @l;
+    }
+    .pos(@p,@t,@r,@b,@l) when (@p = f) {
+      position: fixed;
+      top: @t;
+      right: @r;
+      bottom: @b;
+      left: @l;
+    }
+    .pos(@p,@t,@r,@b,@l) when (@p = r) {
+      position: relative;
+      top: @t;
+      right: @r;
+      bottom: @b;
+      left: @l;
+    }
+    .pos(@p,@t,@r,@b,@l) when (@p = sti) {
+      position: sticky;
+      top: @t;
+      right: @r;
+      bottom: @b;
+      left: @l;
+    }
+
+// ------------------------------------------------------------------------------------------
+
+//  position
+    /*
+    Used to set positions (top, right, bottom, left) individually
+    */
+    .posT(@p) { top: @p; }
+    .posR(@p) { right: @p; }
+    .posB(@p) { bottom: @p; }
+    .posL(@p) { left: @p; }
+
+// ------------------------------------------------------------------------------------------

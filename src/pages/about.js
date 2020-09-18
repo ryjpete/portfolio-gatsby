@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import aboutStyles from './about.module.less'
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo/seo'
+import PageTitle from '../components/pageTitle/pageTitle'
 
 const About = () => {
   const data = useStaticQuery(graphql`
@@ -22,20 +23,14 @@ const About = () => {
   // console.log(data)
 
   const pageTitle = data.contentfulPageTitle.pageTitle
-  const newPageTitleArray = pageTitle.split('. ')
 
   return (
     <Layout>
       <SEO
         title="About RJP"
         description="Ryan Peterson is a full-stack web developer based in the Chicagoland area." />
-        
-      <h1 className={aboutStyles.pageTitle}>
-        {newPageTitleArray.map((item, index) => {
-          item = item.replace('.', '')
-          return <span key={index}>{item}.</span>
-        })}
-      </h1>
+      
+      <PageTitle pageTitle={pageTitle} />
       
       {data.contentfulOpeningContent.openingParagraph.json.content.map((para, index) => {
         return <p key={index} className={aboutStyles.level}>{para.content.map((par, index) => {

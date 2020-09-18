@@ -5,6 +5,7 @@ import workCategoryStyles from './workCategory.module.less'
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo/seo'
 import WorkNav from '../components/workNav/workNav'
+import PageTitle from '../components/pageTitle/pageTitle'
 
 export const query = graphql`
   query($slug: String!) {
@@ -14,14 +15,16 @@ export const query = graphql`
   }
 `
 
-const WorkCategory = props => {  
+const WorkCategory = props => {
+  const pageTitle = props.data.contentfulWorkCategory.workCategoryTitle
+
   return (
     <Layout>
       <SEO
         title='Work'
         description="Ryan J Peterson's work as a developer and designer." />
 
-      <h1 className={workCategoryStyles.pageTitle}>{props.data.contentfulWorkCategory.workCategoryTitle}</h1>
+      <PageTitle pageTitle={pageTitle} />
 
       <div className={workCategoryStyles.workBlock}>
         <WorkNav />

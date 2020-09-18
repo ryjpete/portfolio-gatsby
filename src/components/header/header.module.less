@@ -5,10 +5,7 @@
   .bgc(@white);
   .dis(f);
   .pad(2rem,2rem,2rem,2rem);
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
+  .pos(f,0,0,auto,0);
   z-index: 100;
 
     @media (max-width: 767px) {
@@ -69,8 +66,8 @@
     .ls(.1rem);
     .m(l,auto);
     .pad(3rem,1rem,3rem,1rem);
-    right: 0;
-    left: 101px;
+    .posR(0);
+    .posL(101px);
 
       @media (max-width: 767px) {
         .bd(t,1px,solid,rgba(0,0,0,0.1));
@@ -78,8 +75,8 @@
         .jc(c);
         .m(t,1rem);
         .pad(1rem,0,1rem,0);
-        top: 85px;
-        left: 0;
+        .posT(85px);
+        .posL(0);
       }
 
     ul {

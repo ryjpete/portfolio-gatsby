@@ -1,7 +1,8 @@
 import React from 'react'
 import { graphql, Link, useStaticQuery } from 'gatsby'
+import { globalHistory } from '@reach/router'
 
-import workNavStyles from './workNavStyles.module.less'
+import workNavStyles from './workNav.module.less'
 
 const WorkNav = () => {
   const data = useStaticQuery(graphql`
@@ -22,35 +23,59 @@ const WorkNav = () => {
       }
     }
   `)
+
+  const pathname = globalHistory.location.pathname
+
   return (
-    <ul className={workNavStyles.list}>
+    <ul className={`${workNavStyles.list}`}>
       {data.contentfulPageModel.pageModelReferences.map((ref) => {
         return (
-          <li key={ref.id}>
+          <li
+            key={ref.id}
+            className={`${workNavStyles.menuItem} ${pathname === '/' + ref.workCategorySlug ? workNavStyles.currentMenuItem : ''}`}>
             <Link
               to={`/${ref.workCategorySlug}`}
+              className={workNavStyles.menuLink}
               activeClassName={workNavStyles.active}>
               {ref.workCategoryTitle}
             </Link>
-
-            <ul className={workNavStyles.list}>
+  
+            <ul className={`${workNavStyles.list} ${workNavStyles.level1}`}>
               {ref.subCategory.map((sub) => {
-                return (
-                  <li key={sub.contentful_id}>
-                    <Link
-                      to={`/${sub.workCategorySlug}`}
-                      activeClassName={workNavStyles.active}>
-                        {sub.workCategoryTitle}
-                      </Link>
-                  </li>
-                )
-              })}
-            </ul>
+                  return (
+                    <li
+                      key={sub.contentful_id}
+                      className={`${workNavStyles.menuItem} ${pathname === '/' + sub.workCategorySlug ? workNavStyles.currentMenuItem : ''}`}>
+                      <Link
+                        to={`/${sub.workCategorySlug}`}
+                        className={workNavStyles.menuLink}
+                        activeClassName={workNavStyles.active}>
+                          {sub.workCategoryTitle}
+                        </Link>
+                    </li>
+                    )
+                  })}
+              </ul>
           </li>
         )
       })}
     </ul>
   )
+  // return (
+  //   <nav className={workNavStyles.nav}>
+  //     {data.contentfulPageModel.pageModelReferences.map((ref) => {
+  //       return (
+  //         <Link
+  //           key={ref.id}
+  //           to={`/${ref.workCategorySlug}`}
+  //           className={workNavStyles.workLink}
+  //           activeClassName={workNavStyles.active}>
+  //           {ref.workCategoryTitle}
+  //         </Link>          
+  //       )
+  //     })}
+  //   </nav>
+  // )
 }
 
 export default WorkNav

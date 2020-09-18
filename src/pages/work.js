@@ -5,6 +5,7 @@ import workStyles from './work.module.less'
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo/seo'
 import WorkNav from '../components/workNav/workNav'
+import PageTitle from '../components/pageTitle/pageTitle'
 
 const Work = () => {
   const data = useStaticQuery(graphql`
@@ -15,15 +16,25 @@ const Work = () => {
     }
   `)
 
+  const pageTitle = data.contentfulPageModel.pageTitle
+
   return (
     <Layout>
       <SEO
         title='Work'
         description="Ryan J Peterson's work as a developer and designer." />
+        
+      <PageTitle pageTitle={pageTitle} />
 
-      <h1 className={workStyles.pageTitle}>{data.contentfulPageModel.pageTitle}</h1>
+      <div className={workStyles.workBlock}>
+        <WorkNav />
 
-      <WorkNav />
+        <div className={workStyles.workContent}>
+          <h2>Projects are on their way.</h2>
+          <p>As this site is currently in development, the smart thing to do would be to <em>not</em> put these pages up with literally no projects listed. But what fun is that? There <em>are</em> projects waiting patiently in line to get up here, I promise. But they're being patient, as you should be.</p>
+        </div>
+      </div>
+
 
       {/* <div className='item'>
         <h3 className='title'>Amata Law Offices</h3>

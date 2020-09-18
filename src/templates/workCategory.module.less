@@ -1,23 +1,5 @@
 @import '../styles/imports.less';
 
-.pageTitle {
-  .ai(s);
-  .dis(f);
-  .flexd(c);
-  .fs(8vw);
-  .lh(6vw);
-  .m(t,10rem);
-  .m(b,10rem);
-
-    @media (max-width: 767px) {
-      .dis(b);
-      .fs(10vw);
-      .lh(8vw);
-      .m(t,4rem);
-      .m(b,4rem);
-    }
-}
-
 .work {
   &Block {
     .dis(f);
@@ -25,10 +7,15 @@
   }
 
   &Content {
-    .maxW(800px);
+    .p(l,5%);
+    .w(80%);
 
       @media (max-width: 1200px) {
-        .maxW(none);
+        .p(l,3%);
+        .w(82%);
+      }
+      @media (max-width: 767px) {
+        .w(72%);
       }
   }
 }
