@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+// import { myContext } from '../../provider'
 
-// import homeStyles from './index.module.less'
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo/seo'
 import PageTitle from '../components/pageTitle/pageTitle'
@@ -20,11 +20,15 @@ const Home = () => {
   
   return (
     <Layout>
+      
       <SEO
         title="Home"
         description="The portfolio site of Ryan Peterson, full-stack web developer." />
-      
-      <PageTitle pageTitle={pageTitle} />
+
+      <article>
+        <PageTitle pageTitle={pageTitle} />
+      </article>      
+
     </Layout>
   )
 }

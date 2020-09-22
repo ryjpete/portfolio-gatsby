@@ -35,6 +35,7 @@ module.exports = {
       options: {
         google: {
           families: [
+            `Anton:400`,
             `Inconsolata:200,400,700.900`,
             `Titillium Web:400,900`,
           ],
@@ -55,12 +56,28 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
+    `gatsby-plugin-transition-link`,
+    `gatsby-plugin-styled-components`,
     // {
-    //   resolve: `gatsby-source-filesystem`,
+    //   resolve: `gatsby-plugin-react-redux`,
     //   options: {
-    //     name: `data`,
-    //     path: `${__dirname}/src/data/`,
-    //     ignore: [`**/\.*`], // ignore files starting with a dot
+    //     // [required] - path to your createStore module
+    //     pathToCreateStoreModule: './src/state/createStore',
+    //     // [optional] - options passed to `serialize-javascript`
+    //     // info: https://github.com/yahoo/serialize-javascript#options
+    //     // will be merged with these defaults:
+    //     serialize: {
+    //       space: 0,
+    //       // if `isJSON` is set to `false`, `eval` is used to deserialize redux state,
+    //       // otherwise `JSON.parse` is used
+    //       isJSON: true,
+    //       unsafe: false,
+    //       ignoreFunction: true,
+    //     },
+    //     // [optional] - if true will clean up after itself on the client, default:
+    //     cleanupOnClient: true,
+    //     // [optional] - name of key on `window` where serialized state will be stored, default:
+    //     windowKey: '__PRELOADED_STATE__',
     //   },
     // },
     // {

@@ -1,4 +1,3 @@
 import Provider from './provider'
-import './src/styles/global.less'
 
 export const wrapRootElement = Provider

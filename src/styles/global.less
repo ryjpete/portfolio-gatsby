@@ -2,13 +2,41 @@
 
 html,
 body {
-  // .bgc(@bg_dark);
   .bgc(@white);
   color: @bg_dark;
   .ff('Inconsolata', monospace);
   .fs(62.5%);
+  .h(100%);
   .mar();
   .pad();
+  
+  #___gatsby {
+    .h(inherit);
+
+    #gatsby-focus-wrapper {
+      .h(inherit);
+
+      .tl-edges {
+        .h(inherit);
+
+        .tl-wrapper {
+          .h(inherit);
+
+          main {
+            .dis(f);
+            .flexd(c);
+
+            article {
+              .dis(f);
+              .flexd(c);
+              .minH(100vh);
+              .pad(150px,5rem,0,5rem);
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 * {
@@ -31,21 +59,21 @@ h1 {
   .tt(u);
 
 
-  background: linear-gradient(to bottom, @teal 0%, @neon_green 50%, @teal 100%);
-  background-size: auto 200%;
+  // background: linear-gradient(to bottom, @teal 0%, @neon_green 50%, @teal 100%);
+  // background-size: auto 200%;
   
-  color: @bg_dark;
-  // text-fill-color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  // color: @bg_dark;
+  // // text-fill-color: transparent;
+  // background-clip: text;
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
   
-  animation: shine 10s linear infinite;
-  @keyframes shine {
-    to {
-      background-position: center 200%;
-    }
-  }
+  // animation: shine 10s linear infinite;
+  // @keyframes shine {
+  //   to {
+  //     background-position: center 200%;
+  //   }
+  // }
 
 
 

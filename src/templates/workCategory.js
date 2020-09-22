@@ -31,7 +31,7 @@ const WorkCategory = props => {
 
         <div className={workCategoryStyles.workContent}>
           <h2>{props.data.contentfulWorkCategory.workCategoryTitle} projects are on their way.</h2>
-          <p>As this site is currently in development, the smart thing to do would be to <em>not</em> put these pages up with literally no projects listed. But what fun is that? There <em>are</em> projects waiting patiently in line to get up here, I promise. But they're being patient, as you should be.</p>
+          <p>Projects are being developed, so they'll start to show here as soon as I get them functioning. Or partially-functioning. It's really all a work in progress, so if there's at least <em>some</em> progress, then it's working. ... Think about it.</p>
         </div>
       </div>
     </Layout>

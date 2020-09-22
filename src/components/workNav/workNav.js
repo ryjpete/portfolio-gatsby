@@ -1,6 +1,8 @@
 import React from 'react'
-import { graphql, Link, useStaticQuery } from 'gatsby'
-import { globalHistory } from '@reach/router'
+// import { graphql, Link, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
+// import { globalHistory } from '@reach/router'
+// import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 import workNavStyles from './workNav.module.less'
 
@@ -24,42 +26,67 @@ const WorkNav = () => {
     }
   `)
 
-  const pathname = globalHistory.location.pathname
+  // const pathname = globalHistory.location.pathname
 
   return (
-    <ul className={`${workNavStyles.list}`}>
+    // <ul className={`${workNavStyles.list}`}>
+    //   {data.contentfulPageModel.pageModelReferences.map((ref) => {
+    //     return (
+    //       <li
+    //         key={ref.id}
+    //         className={`${workNavStyles.menuItem} ${pathname === '/' + ref.workCategorySlug ? workNavStyles.currentMenuItem : ''}`}>
+    //         <Link
+    //           to={`/${ref.workCategorySlug}`}
+    //           className={workNavStyles.menuLink}
+    //           activeClassName={workNavStyles.active}>
+    //           {ref.workCategoryTitle}
+    //         </Link>
+  
+    //         <ul className={`${workNavStyles.list} ${workNavStyles.level1}`}>
+    //           {ref.subCategory.map((sub) => {
+    //             return (
+    //               <li
+    //                 key={sub.contentful_id}
+    //                 className={`${workNavStyles.menuItem} ${pathname === '/' + sub.workCategorySlug ? workNavStyles.currentMenuItem : ''}`}>
+    //                 <Link
+    //                   to={`/${sub.workCategorySlug}`}
+    //                   className={workNavStyles.menuLink}
+    //                   activeClassName={workNavStyles.active}>
+    //                     {sub.workCategoryTitle}
+    //                   </Link>
+    //               </li>
+    //               )
+    //             })}
+    //         </ul>
+    //       </li>
+    //     )
+    //   })}
+    // </ul>
+    <div className={workNavStyles.list}>
       {data.contentfulPageModel.pageModelReferences.map((ref) => {
         return (
-          <li
-            key={ref.id}
-            className={`${workNavStyles.menuItem} ${pathname === '/' + ref.workCategorySlug ? workNavStyles.currentMenuItem : ''}`}>
-            <Link
-              to={`/${ref.workCategorySlug}`}
-              className={workNavStyles.menuLink}
-              activeClassName={workNavStyles.active}>
+          <h3 key={ref.id}>
+            {/* <TransitionLink
+              // to={`${ref.workCategorySlug}`}
+              // className={workNavStyles.menuLink}
+              // activeClassName={workNavStyles.active}
+              exit={{
+                length: 1,
+                trigger: ({ exit, node }) =>
+                  this.someCustomDefinedAnimation({ exit, node, direction: 'out' }),
+              }}
+              entry={{
+                length: 0,
+                trigger: ({ exit, node }) =>
+                  this.someCustomDefinedAnimation({ exit, node, direction: 'in' }),
+              }}
+            > */}
               {ref.workCategoryTitle}
-            </Link>
-  
-            <ul className={`${workNavStyles.list} ${workNavStyles.level1}`}>
-              {ref.subCategory.map((sub) => {
-                  return (
-                    <li
-                      key={sub.contentful_id}
-                      className={`${workNavStyles.menuItem} ${pathname === '/' + sub.workCategorySlug ? workNavStyles.currentMenuItem : ''}`}>
-                      <Link
-                        to={`/${sub.workCategorySlug}`}
-                        className={workNavStyles.menuLink}
-                        activeClassName={workNavStyles.active}>
-                          {sub.workCategoryTitle}
-                        </Link>
-                    </li>
-                    )
-                  })}
-              </ul>
-          </li>
+            {/* </TransitionLink> */}
+          </h3>
         )
       })}
-    </ul>
+    </div>
   )
   // return (
   //   <nav className={workNavStyles.nav}>

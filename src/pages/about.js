@@ -6,7 +6,7 @@ import Layout from '../components/layout/layout'
 import SEO from '../components/seo/seo'
 import PageTitle from '../components/pageTitle/pageTitle'
 
-const About = () => {
+const About = ({ location }) => {
   const data = useStaticQuery(graphql`
     query AboutQuery {
       contentfulPageTitle(contentful_id: {eq: "1mLCKMjqW7LM3SG25PmJM6"}) {
@@ -30,13 +30,18 @@ const About = () => {
         title="About RJP"
         description="Ryan Peterson is a full-stack web developer based in the Chicagoland area." />
       
-      <PageTitle pageTitle={pageTitle} />
+      <article>
       
-      {data.contentfulOpeningContent.openingParagraph.json.content.map((para, index) => {
-        return <p key={index} className={aboutStyles.level}>{para.content.map((par, index) => {
-          return par.value
-        })}</p>
-      })}
+        <PageTitle pageTitle={pageTitle} />
+        
+        {data.contentfulOpeningContent.openingParagraph.json.content.map((para, index) => {
+          return <p key={index} className={aboutStyles.level}>{para.content.map((par, index) => {
+            return par.value
+          })}</p>
+        })}
+
+      </article>
+
     </Layout>
   )
 }
