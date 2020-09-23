@@ -5,6 +5,41 @@ import TransitionLink from 'gatsby-plugin-transition-link'
 import headerStyles from './header.module.less'
 import Logo from '../Logo/Logo'
 
+const mainNav = [
+  {
+    name: 'home',
+    to: '/',
+    bgColor: '#ffffff',
+    pageTitleColor: '#06d6a0',
+    logoColor: '#202020',
+    navColor: '#202020',
+  },
+  {
+    name: 'about',
+    to: '/about/',
+    bgColor: '#3479DF',
+    pageTitleColor: '#E2ECFA',
+    logoColor: '#133B77',
+    navColor: '#E2ECFA',
+  },
+  {
+    name: 'work',
+    to: '/work/',
+    bgColor: '#287473',
+    pageTitleColor: '#6BCCCB',
+    logoColor: '#143B3A',
+    navColor: '#6BCCCB',
+  },
+  {
+    name: 'resume',
+    to: '/resume/',
+    bgColor: '#ff6392',
+    pageTitleColor: '#FFDDE7',
+    logoColor: '#B00035',
+    navColor: '#FFDDE7',
+  },
+]
+
 const Header = () => (
   <>
     <myContext.Consumer>
@@ -18,76 +53,33 @@ const Header = () => (
 
             <nav className={headerStyles.navigation}>
               <ul>
-                <li>
-                  <TransitionLink
-                    to='/'
-                    activeClassName={headerStyles.active}
-                    style={{color: `${context.navColor}`}}
-                    activeStyle={{backgroundColor: `${context.pageTitleColor}`, color: `${context.bgColor}`}}
-                    onClick={() => {
-                      context.changeBgColor('#ffffff')
-                      context.changePageTitleColor('#06d6a0')
-                      context.changeLogoColor('#202020')
-                      context.changeNavColor('#202020')
-                      context.changePrevBgColor(context.bgColor)
-                    }}
-                  >
-                    home
-                  </TransitionLink>
-                </li>
-                <li>
-                  <TransitionLink
-                    to='/about/'
-                    activeClassName={headerStyles.active}
-                    style={{color: `${context.navColor}`}}
-                    activeStyle={{backgroundColor: `${context.pageTitleColor}`, color: `${context.bgColor}`}}
-                    onClick={() => {
-                      context.changeBgColor('#3479DF')
-                      context.changePageTitleColor('#E2ECFA')
-                      context.changeLogoColor('#133B77')
-                      context.changeNavColor('#E2ECFA')
-                      context.changePrevBgColor(context.bgColor)
-                    }}
-                    >
-                    about
-                  </TransitionLink>
-                </li>
-                <li>
-                  <TransitionLink
-                    to='/work/'
-                    activeClassName={headerStyles.active}
-                    style={{color: `${context.navColor}`}}
-                    activeStyle={{backgroundColor: `${context.pageTitleColor}`, color: `${context.bgColor}`}}
-                    onClick={() => {
-                      context.changeBgColor('#287473')
-                      context.changePageTitleColor('#6BCCCB')
-                      context.changeLogoColor('#143B3A')
-                      context.changeNavColor('#6BCCCB')
-                      context.changePrevBgColor(context.bgColor)
-                    }}
-                    >
-                    work
-                  </TransitionLink>
-                </li>
-                <li>
-                  <TransitionLink
-                    to='/resume/'
-                    activeClassName={headerStyles.active}
-                    style={{color: `${context.navColor}`}}
-                    activeStyle={{backgroundColor: `${context.pageTitleColor}`, color: `${context.bgColor}`}}
-                    onClick={() => {
-                      context.changeBgColor('#ff6392')
-                      context.changePageTitleColor('#FFDDE7')
-                      context.changeLogoColor('#B00035')
-                      context.changeNavColor('#FFDDE7')
-                      context.changePrevBgColor(context.bgColor)
-                    }}
-                  >
-                    resume
-                  </TransitionLink>
-                </li>
+                {mainNav.map((item, index) => {
+                  return (
+                    <li key={index}>
+                      <TransitionLink
+                        to={item.to}
+                        activeClassName={headerStyles.active}
+                        style={{color: `${context.navColor}`}}
+                        activeStyle={{
+                          backgroundColor: `${context.pageTitleColor}`,
+                          color: `${context.bgColor}`
+                        }}
+                        onClick={() => {
+                          context.changeBgColor(item.bgColor)
+                          context.changePageTitleColor(item.pageTitleColor)
+                          context.changeLogoColor(item.logoColor)
+                          context.changeNavColor(item.navColor)
+                          context.changePrevBgColor(context.bgColor)
+                        }}
+                      >
+                        {item.name}
+                      </TransitionLink>
+                    </li>
+                  )
+                })}
               </ul>
             </nav>
+
           </header>
         </React.Fragment>
       )}

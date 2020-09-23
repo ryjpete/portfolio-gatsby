@@ -1,5 +1,4 @@
 import React from 'react'
-// import { Link } from 'gatsby'
 import TransitionLink from 'gatsby-plugin-transition-link'
 import { motion } from 'framer-motion'
 import { myContext } from '../../../provider'
@@ -28,6 +27,7 @@ const Logo = () => {
                   context.changePageTitleColor('#06d6a0')
                   context.changeLogoColor('#202020')
                   context.changeNavColor('#202020')
+                  context.changePrevBgColor(context.bgColor)
                 }}
               >
                 <span className={LogoStyles.letter}>r</span>
