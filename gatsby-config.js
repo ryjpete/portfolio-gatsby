@@ -7,8 +7,8 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: process.env.TITLE || "Portfolio of RJP",
-    description: "The ongoing portfolio of Ryan Peterson, Full Stack Developer and WordPress Engineer.",
+    title: process.env.TITLE || "Ryan Jennings Peterson",
+    description: "The ongoing portfolio of Ryan Peterson, Full Stack Developer, WordPress Engineer, and Indie Author.",
     siteUrl: "http://dev.ryanjenningspeterson.com",
     image: "/images/logo.png",
     author: 'RJP',

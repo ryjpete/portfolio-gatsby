@@ -1,66 +1,46 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import workStyles from './work.module.less'
+// import workStyles from './work.module.less'
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo/seo'
-import WorkNav from '../components/workNav/workNav'
+// import WorkNav from '../components/workNav/workNav'
 import PageTitle from '../components/pageTitle/pageTitle'
+import OpeningContent from '../components/OpeningContent/OpeningContent'
 
-const Work = ({ location }) => {
+const Work = () => {
   const data = useStaticQuery(graphql`
     query WorkQuery {
       contentfulPageModel(contentful_id: {eq: "6wXdbcfpTmUJ7kDinmTLiO"}) {
         pageTitle
-      }
-
-      allContentfulProjectModel {
-        edges {
-          node {
-            projectTitle
-            slug
-            projectDate(formatString: "MM'YY")
+        metaDescription
+        titleTag
+        pageModelReferences {
+          ... on ContentfulPageTitle {
             id
-            contentful_id
-            client
+            pageTitle
+          }
+          ... on ContentfulOpeningContent {
+            openingParagraph {
+              json
+            }
           }
         }
       }
     }
   `)
 
-  const pageTitle = data.contentfulPageModel.pageTitle
-
   return (
     <Layout>
       <SEO
-        title='Work'
-        description="Ryan J Peterson's work as a developer and designer." />
+        title={data.contentfulPageModel.titleTag}
+        description={data.contentfulPageModel.metaDescription} />
 
       <article>
         
-        <PageTitle pageTitle={pageTitle} />
+        <PageTitle pageTitle={data.contentfulPageModel.pageModelReferences[0].pageTitle} />
 
-        <div className={workStyles.workBlock}>
-          {/* <WorkNav /> */}
-
-          <div className={workStyles.workContent}>
-            <h2>Projects are on their way.</h2>
-            <p>Projects are being developed, so they'll start to show here as soon as I get them functioning. Or partially-functioning. It's really all a work in progress, so if there's at least <em>some</em> progress, then it's working. ... Think about it.</p>
-
-            {/* <div className={workStyles.projects}>
-              {data.allContentfulProjectModel.edges.map((project, index) => {
-                return (
-                  <div key={index} className={workStyles.project}>
-                    <h3 className={workStyles.projectClient}>{project.node.client}</h3>
-                    <h4 className={workStyles.projectTitle}>{project.node.projectTitle}</h4>
-                  </div>
-                )
-              })}
-            </div> */}
-          </div>
-        </div>
-
+        <OpeningContent data={data} />
 
         {/* <div className='item'>
           <h3 className='title'>Amata Law Offices</h3>

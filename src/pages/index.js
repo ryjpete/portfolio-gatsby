@@ -5,28 +5,44 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo/seo'
 import PageTitle from '../components/pageTitle/pageTitle'
+import OpeningContent from '../components/OpeningContent/OpeningContent'
 
 const Home = () => {
   const data = useStaticQuery(graphql`
     query HomeQuery {
-      contentfulPageTitle(contentful_id: {eq: "1d6VrCtsXkenxhvMPEswkT"}) {
+      contentfulPageModel(contentful_id: {eq: "1Clyk58DFHg4E2FpQnAq1A"}) {
         pageTitle
+        metaDescription
+        titleTag
+        pageModelReferences {
+          ... on ContentfulPageTitle {
+            id
+            pageTitle
+          }
+          ... on ContentfulOpeningContent {
+            openingParagraph {
+              json
+            }
+          }
+        }
       }
     }
   `)
   // console.log(data)
-
-  const pageTitle = data.contentfulPageTitle.pageTitle
   
   return (
     <Layout>
       
       <SEO
-        title="Home"
-        description="The portfolio site of Ryan Peterson, full-stack web developer." />
+        title={data.contentfulPageModel.titleTag}
+        description={data.contentfulPageModel.metaDescription} />
 
       <article>
-        <PageTitle pageTitle={pageTitle} />
+
+        <PageTitle pageTitle={data.contentfulPageModel.pageModelReferences[0].pageTitle} />
+
+        <OpeningContent data={data} />
+
       </article>      
 
     </Layout>

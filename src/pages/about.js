@@ -1,44 +1,46 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import aboutStyles from './about.module.less'
+// import aboutStyles from './about.module.less'
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo/seo'
 import PageTitle from '../components/pageTitle/pageTitle'
+import OpeningContent from '../components/OpeningContent/OpeningContent'
 
-const About = ({ location }) => {
+const About = () => {
   const data = useStaticQuery(graphql`
     query AboutQuery {
-      contentfulPageTitle(contentful_id: {eq: "1mLCKMjqW7LM3SG25PmJM6"}) {
+      contentfulPageModel(contentful_id: {eq: "248EyvV1nx0ZSRlHY3hz4Z"}) {
         pageTitle
-      }
-      
-      contentfulOpeningContent(contentful_id: {eq: "RsZdxwgyQmfJcJnOAohOw"}) {
-        openingParagraph {
-          json
+        metaDescription
+        titleTag
+        pageModelReferences {
+          ... on ContentfulPageTitle {
+            id
+            pageTitle
+          }
+          ... on ContentfulOpeningContent {
+            openingParagraph {
+              json
+            }
+          }
         }
       }
     }
   `)
   // console.log(data)
 
-  const pageTitle = data.contentfulPageTitle.pageTitle
-
   return (
     <Layout>
       <SEO
-        title="About RJP"
-        description="Ryan Peterson is a full-stack web developer based in the Chicagoland area." />
+        title={data.contentfulPageModel.titleTag}
+        description={data.contentfulPageModel.metaDescription} />
       
       <article>
       
-        <PageTitle pageTitle={pageTitle} />
-        
-        {data.contentfulOpeningContent.openingParagraph.json.content.map((para, index) => {
-          return <p key={index} className={aboutStyles.level}>{para.content.map((par, index) => {
-            return par.value
-          })}</p>
-        })}
+        <PageTitle pageTitle={data.contentfulPageModel.pageModelReferences[0].pageTitle} />
+
+        <OpeningContent data={data} />
 
       </article>
 

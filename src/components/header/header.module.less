@@ -7,51 +7,13 @@
   z-index: 100;
 
     @media (max-width: 767px) {
-      // .dis(b);
-      // .pad();
-      // .ta(c);
+      .flexd(c);
     }
 
   > * {
     .ai(c);
     .dis(f);
   }
-
-  // .logoLink {
-  //   .bgc(@white);
-  //   .h(150px);
-  //   .jc(c);
-  //   .pos(r,auto,auto,auto,auto);
-  //   .w(150px);
-
-  //   &::after {
-  //     .bgc(@teal);
-
-  //   }
-    
-  //   .letter {
-  //     color: @bg_dark;
-  //     .ff('Anton',sans-serif);
-  //     .fs(3rem);
-  //     .fw(900);
-  //     .ls(0.5rem);
-  //   }
-  // }
-
-  // a {
-    // .m(r,2.5rem);
-
-    // new
-    // .bgc(@white);
-    // .bdr(50%);
-    // .h(100px);
-    // .w(100px);
-
-      // @media (max-width: 767px) {
-      //   .dis(ib);
-      //   .mar();
-      // }
-  // }
 
   .logo {
     .h();
@@ -86,22 +48,15 @@
   }
 
   .navigation {
-    // .bdw(0 0 5px 0);
     .jc(fe);
     .ls(.1rem);
     .m(l,auto);
-    .pad(3rem,1rem,3rem,1rem);
-    .posR(0);
-    .posL(101px);
+    .pad(3rem,5rem,3rem,1rem);
 
       @media (max-width: 767px) {
-        // .bd(t,1px,solid,rgba(0,0,0,0.1));
-        // .bd(b,1px,solid,rgba(0,0,0,0.1));
         .jc(c);
-        .m(t,1rem);
-        .pad(0,0,0,0);
-        .posT(85px);
-        .posL(0);
+        .m(l,0);
+        .pad();
       }
 
     ul {
@@ -113,16 +68,16 @@
       li {
         .m(l,1.5rem);
 
+          @media (max-width: 767px) {
+            .m(r,1rem);
+            .m(l,1rem);
+          }
+
         a {
-          // color: @bg_dark;
           .dis(b);
           .fs(1.2rem);
           .fw(700);
           .pad(1rem,.5rem,1rem,.5rem);
-
-          // &.active {
-          //   color: @teal;
-          // }
         }
       }
     }

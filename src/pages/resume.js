@@ -6,7 +6,7 @@ import Layout from '../components/layout/layout'
 import SEO from '../components/seo/seo'
 import PageTitle from '../components/pageTitle/pageTitle'
 
-const Resume = ({ location }) => {
+const Resume = () => {
   const data = useStaticQuery(graphql`
     query ResumeQuery {
       contentfulResumePage {
