@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'gatsby'
+// import { Link } from 'gatsby'
+import TransitionLink from 'gatsby-plugin-transition-link'
 import { motion } from 'framer-motion'
 import { myContext } from '../../../provider'
 
@@ -18,7 +19,7 @@ const Logo = () => {
               }}
               whileTap={{ scale: 0.8 }}
             >
-              <Link
+              <TransitionLink
                 className={LogoStyles.logoLink}
                 style={{color: `${context.logoColor}`}}
                 to='/'
@@ -32,7 +33,7 @@ const Logo = () => {
                 <span className={LogoStyles.letter}>r</span>
                 <span className={LogoStyles.letter}>j</span>
                 <span className={LogoStyles.letter}>p</span>
-              </Link>
+              </TransitionLink>
             </motion.div>            
           </React.Fragment>
         )}

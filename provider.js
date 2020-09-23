@@ -8,8 +8,13 @@ const Provider = props => {
   const [navColor,setNavColor] = useState('#202020')
   const [pageTitleColor,setPageTitleColor] = useState('#06d6a0')
 
+  const [prevBgColor,setPrevBgColor] = useState('')
+
   return (
     <myContext.Provider value={{
+      prevBgColor,
+      changePrevBgColor: (color) => setPrevBgColor(color),
+
       bgColor,
       changeBgColor: (color) => setBgColor(color),
 
