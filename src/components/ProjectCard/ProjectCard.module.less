@@ -1,0 +1,91 @@
+@import '../../styles/imports.less';
+
+.work {
+  &Block {
+    .dis(f);
+    .flexd(r);
+    .flexw(w);
+    .jc(c);
+    .m(t,10rem);
+    .m(r,-5rem);
+    .m(l,-5rem);
+
+      @media (max-width: 1024px) {
+        .m(r,0);
+        .m(l,0);
+      }
+
+    .item {
+      .dis(f);
+      .flexd(c);
+      .p(b,23%);
+      .pos(r,auto,auto,auto,auto);
+      .w(23%);
+
+        @media (max-width: 1200px) {
+          .h(30%);
+          .p(b,30%);
+          .w(30%);
+        }
+        @media (max-width: 1024px) {
+          .h(50%);
+          .p(b,50%);
+          .w(50%);
+        }
+        @media (max-width: 767px) {
+          .h(100%);
+          .p(b,100%);
+          .w(100%);
+        }
+      
+      .item {
+        &Link {
+          .ai(c);
+          .bds(s);
+          .bdw(1px,1px,1px,1px);
+          .bdr(50%);
+          .dis(f);
+          .pos(a,8%,8%,8%,8%);
+          cursor: pointer;
+          .ta(c);
+        }
+        
+        &Client {
+          .font('Titillium Web',3rem,3rem,900);
+          .mar();
+          .pos(a,50%,0,auto,0);
+          transform: translateY(-50%);
+
+            @media (max-width: 1600px) {
+              .fs(2rem);
+              .lh(2rem);
+            }
+            @media (max-width: 1024px) {
+              .fs(2.6rem);
+              .lh(2.6rem);
+            }
+            @media (max-width: 767px) {
+              .fs(3rem);
+              .lh(3rem);
+            }
+            @media (max-width: 600px) {
+              .fs(2.4rem);
+              .lh(2.4rem);
+            }
+            @media (max-width: 500px) {
+              .fs(2rem);
+              .lh(2rem);
+            }
+            @media (max-width: 400px) {
+              .fs(1.6rem);
+              .lh(1.6rem);
+            }
+        }
+
+        &Date {
+          .mar();
+        }
+      }
+    }
+  }
+}

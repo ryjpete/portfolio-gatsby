@@ -64,13 +64,13 @@ const Header = () => (
                           backgroundColor: `${context.pageTitleColor}`,
                           color: `${context.bgColor}`
                         }}
-                        onClick={() => {
-                          context.changeBgColor(item.bgColor)
-                          context.changePageTitleColor(item.pageTitleColor)
-                          context.changeLogoColor(item.logoColor)
-                          context.changeNavColor(item.navColor)
-                          context.changePrevBgColor(context.bgColor)
-                        }}
+                        // onClick={() => {
+                        //   context.changeBgColor(item.bgColor)
+                        //   context.changePageTitleColor(item.pageTitleColor)
+                        //   context.changeLogoColor(item.logoColor)
+                        //   context.changeNavColor(item.navColor)
+                        //   context.changePrevBgColor(context.bgColor)
+                        // }}
                       >
                         {item.name}
                       </TransitionLink>
