@@ -43,11 +43,30 @@
           .ai(c);
           .bds(s);
           .bdw(1px,1px,1px,1px);
-          .bdr(50%);
+          .bdr(50%,50%,50%,50%);
           .dis(f);
+          .jc(c);
           .pos(a,8%,8%,8%,8%);
           cursor: pointer;
           .ta(c);
+        }
+
+        &Backdrop {
+          .bdr(0,4.5%,4.5%,0);
+          overflow: hidden;
+          .pos(a,0,0,0,0);
+          visibility: hidden;
+          
+          .itemShortDesc {
+            .bd(t,1px,solid,rgba(255,255,255,0.25));
+            .pos(a,100%,0,0,0);
+            .ta(l);
+
+            .shortDesc {
+              .lh(1.6rem);
+              .pad(6%,4%,6%,4%);
+            }
+          }
         }
         
         &Client {
@@ -82,9 +101,23 @@
             }
         }
 
+        &Project,
         &Date {
+          .fs(1.6rem);
           .mar();
         }
+
+        &Project {
+          .pos(a,auto,0,5%,0);
+        }
+
+        &Date {
+          .ff('Titillium Web',sans-serif);
+          .fs(2rem);
+          .fw(900);
+          .pos(a,auto,4%,2%,auto);
+        }
+
       }
     }
   }

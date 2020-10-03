@@ -39,13 +39,13 @@
     Defines the radius of the element's corners.
     https://www.w3schools.com/cssref/css3_pr_border-radius.asp
     */
-    .bdr(@radius) {
-      -webkit-border-radius: @radius;
-       -khtml-border-radius: @radius;
-         -moz-border-radius: @radius;
-          -ie-border-radius: @radius;
-           -o-border-radius: @radius;
-              border-radius: @radius;
+    .bdr(@bdrTL,@bdrTR,@bdrBR,@bdrBL) {
+      -webkit-border-radius: @bdrTL @bdrTR @bdrBR @bdrBL;
+       -khtml-border-radius: @bdrTL @bdrTR @bdrBR @bdrBL;
+         -moz-border-radius: @bdrTL @bdrTR @bdrBR @bdrBL;
+          -ie-border-radius: @bdrTL @bdrTR @bdrBR @bdrBL;
+           -o-border-radius: @bdrTL @bdrTR @bdrBR @bdrBL;
+              border-radius: @bdrTL @bdrTR @bdrBR @bdrBL;
     }
 
 // ------------------------------------------------------------------------------------------

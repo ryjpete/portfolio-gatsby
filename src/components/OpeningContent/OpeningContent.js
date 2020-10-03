@@ -11,9 +11,14 @@ const OpeningContent = props => {
             <div key={index} className={styles.openingContent}>
               {ref.openingParagraph.json.content.map((para, index) => {
                 return (
-                  <p key={index}>{para.content.map((item, index) => {
-                    return <React.Fragment key={index}>{item.value}</React.Fragment>
-                  })}</p>
+                  <p
+                    key={index}
+                    className={styles.p}
+                  >
+                    {para.content.map((item, index) => {
+                      return <React.Fragment key={index}>{item.value}</React.Fragment>
+                    })}
+                  </p>
                 )
               })}
             </div>
