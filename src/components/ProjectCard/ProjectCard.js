@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 // import { graphql } from 'gatsby'
 import { myContext } from '../../../provider'
 import { motion } from 'framer-motion'
@@ -132,11 +132,6 @@ const shortDescMotion = {
   },
 }
 
-const handleCardClick = id => {
-  // alert(id)
-  alert('This is coming soon')
-}
-
 const ProjectCard = () => {
   const data = useStaticQuery(graphql`
     query ProjectsQuery {
@@ -170,72 +165,79 @@ const ProjectCard = () => {
                   whileHover='hover'
                   animate='rest'
                 >
-                  <motion.div
-                    className={styles.itemLink}
-                    style={{
-                      borderColor: `${context.pageTitleColor}`
-                    }}
-                    custom={item.node.primaryColor}
-                    variants={circleMotion}
-                    onClick={() => { handleCardClick(item.node.contentful_id) }}
+
+                  <Link
+                    to={`/work/${(item.node.client).toLowerCase().replace(' ', '-')}-${(item.node.projectTitle).toLowerCase().replace(' ', '-')}`} 
                   >
 
-                    <motion.h2
-                      className={styles.itemClient}
-                      style={{
-                        color: `${context.pageTitleColor}`
-                      }}
-                      variants={clientMotion}
-                    >
-                      {item.node.client}
-                    </motion.h2>
-
                     <motion.div
-                      className={styles.itemBackdrop}
+                      className={styles.itemLink}
                       style={{
-                        backgroundColor: `${item.node.primaryColor}`
+                        borderColor: `${context.pageTitleColor}`
                       }}
-                      variants={backdropMotion}
+                      custom={item.node.primaryColor}
+                      variants={circleMotion}
                     >
-                      <motion.div
-                        className={styles.itemShortDesc}
+
+                      <motion.h2
+                        className={styles.itemClient}
                         style={{
-                          color: `${getContrast(item.node.primaryColor)}`
+                          color: `${context.pageTitleColor}`
                         }}
-                        variants={shortDescMotion}
+                        variants={clientMotion}
                       >
-                        <p
-                          className={styles.shortDesc}
+                        {item.node.client}
+                      </motion.h2>
+
+                      <motion.div
+                        className={styles.itemBackdrop}
+                        style={{
+                          backgroundColor: `${item.node.primaryColor}`
+                        }}
+                        variants={backdropMotion}
+                      >
+                        <motion.div
+                          className={styles.itemShortDesc}
                           style={{
                             color: `${getContrast(item.node.primaryColor)}`
                           }}
+                          variants={shortDescMotion}
                         >
-                          {item.node.shortDescription}
-                        </p>
+                          <p
+                            className={styles.shortDesc}
+                            style={{
+                              color: `${getContrast(item.node.primaryColor)}`
+                            }}
+                          >
+                            {item.node.shortDescription}
+                          </p>
+                        </motion.div>
                       </motion.div>
-                    </motion.div>
-                    
-                    <motion.h4
-                      className={styles.itemProject}
-                      style={{
-                        color: `${context.pageTitleColor}`
-                      }}
-                      custom={getContrast(item.node.primaryColor)}
-                      variants={projectMotion}
-                    >
-                      {item.node.projectTitle}
-                    
-                    </motion.h4>
-                    
-                    <motion.h4
-                      className={styles.itemDate}
-                      custom={getContrast(item.node.primaryColor)}
-                      variants={dateMotion}
-                    >
-                      {item.node.projectDate}
-                    </motion.h4>
+                      
+                      <motion.h4
+                        className={styles.itemProject}
+                        style={{
+                          color: `${context.pageTitleColor}`
+                        }}
+                        custom={getContrast(item.node.primaryColor)}
+                        variants={projectMotion}
+                      >
+                        {item.node.projectTitle}
+                      
+                      </motion.h4>
+                      
+                      <motion.h4
+                        className={styles.itemDate}
+                        custom={getContrast(item.node.primaryColor)}
+                        variants={dateMotion}
+                      >
+                        {item.node.projectDate}
+                      </motion.h4>
 
-                  </motion.div>
+                    </motion.div>
+                
+                  </Link>
+
                 </motion.div>
               )
             })}
